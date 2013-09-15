@@ -4,7 +4,7 @@ PLOXR
 PLOXR is a publishing engine for Steve Hamaker's *PLOX* and other 
 online graphic novels. 
 
-Read PLOX [http://plox-comic.com/]: http://plox-comic.com/        "PLOX"
+Read PLOX: http://plox-comic.com/
 
 ![Read PLOX](http://steve-hamaker.com/wp-content/uploads/2013/07/PLOX-Header_03.jpg)
 
@@ -26,5 +26,5 @@ Future Features:
 Team Members:
 ------------
 
-- [Eric Smith]: http://ericmsmith.com "Eric M. Smith"
-- [Steve Hamaker]: http://steve-hamaker.com "Steve Hamaker"
+- Eric Smith: http://ericmsmith.com
+- Steve Hamaker: http://steve-hamaker.com

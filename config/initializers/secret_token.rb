@@ -9,4 +9,20 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Ploxr::Application.config.secret_key_base = '185ccfb05ce970c89b66f52bd1a23ba8398ddee0e0a8dbb577606e9425e530c7f9f3340399c4ea2cf3a0ef36d63a9e9a70b5e2289c20ab41454e43e99a50f203'
+
+require 'securerandom'
+
+def secure_token
+	token_file = Rails.root.join('.secret')
+	if File.exist?(token_file)
+		# User the existing token.
+		File.read(token_file).chomp
+	else
+		# Generate a new token and store it in token_file
+		token = SecureRandom.hex(64)
+		File.write(token_file, token)
+		token
+	end
+end 
+
+Ploxr::Application.config.secret_key_base = secure_token

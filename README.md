@@ -26,5 +26,5 @@ Future Features:
 Team Members:
 ------------
 
-- [Eric Smith] http://ericmsmith.com "Eric M. Smith"
-- [Steve Hamaker] http://steve-hamaker.com "Steve Hamaker"
+- [Eric Smith]: http://ericmsmith.com "Eric M. Smith"
+- [Steve Hamaker]: http://steve-hamaker.com "Steve Hamaker"

@@ -4,5 +4,8 @@ class StaticPagesController < ApplicationController
   end
 
   def subscribe
+  end
+
+  def about
   end  
 end

@@ -9,12 +9,12 @@
 	</nav>
 	<nav>
 		<ul class="nav pull-right page-nav">
-			<li><%#= link_to image_tag("prev.png", alt: "previous"), '#' %></li>
-			<li><%#= link_to image_tag("next.png",	alt: "next"), '#' %></li>
+			<li><%= link_to image_tag("prev.png", alt: "previous"), '#' %></li>
+			<li><%= link_to image_tag("next.png",	alt: "next"), '#' %></li>
 		</ul>
 	</nav>
 </div>
 <div class="comic-image">
-	<%#= image_tag("5.jpg", alt: "comic sample") %>
-	<h2><%= @page.filename %></h2>
+	<%= image_tag("5.jpg", alt: "comic sample") %>
+	<h2><%#= @page.filename %></h2>
 </div>

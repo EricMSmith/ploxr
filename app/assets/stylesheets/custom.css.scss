@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "bootstrap-responsive";
 
 /* mixins, variables */
 $purpleDark:    #330033;
@@ -153,10 +154,6 @@ section .wrapper {
       }
     }
   }
-
-  // .comic-image {
-  //   width: 740px;
-  // }
 }
 
 
@@ -193,5 +190,118 @@ footer {
   div#connect div.navbar {
     background: none;
     border:none;
+  }
+
+  .navbar .nav {
+    li {
+      a {
+        padding:0 6px;
+      }
+    }
+  }
+}
+
+/* ============ media rules =============== */
+
+@media (min-width : 200px) and 
+       (max-width : 480px) {
+  
+  header {
+
+    .steve-hamaker {
+      display:none;
+    }
+
+    .navbar .btn-navbar {
+      background-color: $blueLight;
+      background-image: none;
+      margin:5px;
+      padding: 4px 7px;
+    }
+
+
+    .masthead {
+      margin: 4px auto;
+      width: 280px;
+      height: 75px;
+      background: {
+        image: url(image_path('masthead-320.jpg'));
+        repeat: no-repeat;
+        position: center top;
+      }
+    }
+  }
+
+  section .wrapper {
+    background: {
+      color: $blueDark;
+      image: none;
+      repeat: no-repeat;
+      position: left top;
+    }
+    margin-bottom: 10px;
+    min-height: 0;
+  }
+
+  .container {
+    margin:0;
+    .navbar {
+      margin: 0;
+    }
+
+    .page-nav {
+      margin: 0 auto;
+      text-align: center;
+    }
+    .content .navbar nav .page-nav li a {
+      padding: 5px 15px;
+    }
+  }
+
+  .content {
+    float: none;
+    width: 100%;
+    padding: 0;
+
+    .chapter-nav {
+      display: none;
+    }
+  }
+
+  footer {
+
+    #blurb, #connect, #share {
+      padding: 15px 20px;
+    }
+    #blurb {
+      padding-bottom: 0;
+    }
+    #connect {
+      padding-bottom: 25px;
+    }
+    #share {
+      padding-top: 25px;
+    }
+  }
+}
+
+@media only screen and (min-device-width : 481px) and 
+                       (max-device-width : 979px) {
+  
+/* Styles */
+  
+}
+
+
+
+@media (min-width: 1200px) {
+  .container, .navbar-static-top .container, .navbar-fixed-top .container, 
+  .navbar-fixed-bottom .container {
+    width: 940px;
+  }
+
+  footer .span3 {
+    width: 150px;
+    margin-left:20px;
   }
 }

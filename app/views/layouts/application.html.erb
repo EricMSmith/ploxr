@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">	
 		<title><%= full_title(yield(:title)) %></title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="Description"
 			  content="PLOX: A comic about people who happen to be gamers.">
 		<meta name="Author" content="Steve Hamaker">
@@ -11,7 +11,7 @@
 
 		<!-- Stylesheets -->
 		<%= stylesheet_link_tag    "application", media: "all", 
-	  											"data-turbolinks-track" => true %>
+	  													 "data-turbolinks-track" => true %>
 
 	  <%= render 'layouts/shim' %>
 
@@ -36,6 +36,7 @@
 
 		<%= render 'layouts/footer' %>
 
-	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	  <!-- Javascripts -->
+	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	</body>
 </html>

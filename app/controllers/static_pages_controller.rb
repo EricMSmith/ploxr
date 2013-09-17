@@ -1,6 +1,8 @@
 class StaticPagesController < ApplicationController
   
   def home
+    @page = Page.last
+    @chapters = Chapter.all
   end
 
   def subscribe

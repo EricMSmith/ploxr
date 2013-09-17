@@ -18,7 +18,10 @@ describe "Static pages" do
 		before { visit about_path }
 		let(:page_title) { 'About' }
 		it_should_behave_like "all static pages"
-	end
+		it { should have_content("About the comic") }
+		it { should have_content("About Steve") }
+		it { should have_content("Eisner and Harvey Award") }
+		it { should have_content("You spent so much time")}
 
-	# Tests for "Subscribe page" coming soon.
+	end
 end

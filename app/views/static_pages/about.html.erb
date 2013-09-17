@@ -1,3 +1,13 @@
 <% provide(:title, 'About') %>
-<h1>StaticPages#about</h1>
-<p>Find me in app/views/static_pages/about.html.erb</p>
+<div class="row">
+	<h2>About <%= @book.author %></h2>
+	<div>
+		<%= simple_format(@book.author_about) %>
+	</div>
+</div>
+<div class="row">
+	<h2>About the comic</h2>
+	<div>
+		<%= simple_format(@book.description) %>
+	</div>
+</div>

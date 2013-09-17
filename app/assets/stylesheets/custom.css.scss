@@ -1,10 +1,28 @@
 @import "bootstrap";
-@import url(http://fonts.googleapis.com/css?family=Titillium+Web);
+
+/* mixins, variables */
+$purpleDark:    #330033;
+$purpleMedium:  #663366;
+$purpleLight:   #996699;
+$orangeMedium:  #cc9966;
+$blueMedium:    #222941;
+$blueLight:     #5d6e85;
+$blueDark:      #000033;
 
 /* universal */
 
 html {
   overflow-y: scroll;
+}
+
+body {
+  font-size: 100%;
+  background: {
+    color: #330033;
+    image: url(image_path('bg.jpg'));
+    repeat: repeat-x;
+    position: left top;
+  }
 }
 
 section {
@@ -21,23 +39,159 @@ textarea {
 
 /* typography */
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Titillium Web', sans-serif;
-  line-height: 1;
+body {
+  font-family: Lato, Helvetica, Helvetica, Arial, sans-serif;
 }
 
-h1 {
-  font-size: 3em;
+/* ============ header ============ */
+
+header {
+  .navbar {
+    overflow: hidden;
+    background-color: $purpleDark;
+    border-bottom: {
+      width: 8px;
+      style: solid;
+      color: $purpleMedium;
+    }
+
+    .nav {
+      li {
+        line-height: 30px;
+        a {
+          padding: 0 15px 0;
+          color: $purpleLight;
+          line-height: 30px;
+          text: {
+            shadow: none;
+            transform: uppercase;
+          }
+          font: {
+            size: 16px;
+            weight: 900;
+          }
+          &:hover {
+            color: $purpleLight;
+            text-decoration: underline;
+          } 
+        }
+      }
+    }
+  }
+
+  .steve-hamaker {
+    float: left;
+    color: $orangeMedium;
+    line-height: 30px;
+    font: {
+      size: 16px;
+      weight: 900;
+    }
+    &:hover {
+      color: $orangeMedium;
+    }
+  }
+
+  .masthead {
+    height: 115px;
+    width: 940px;
+    background: {
+      image: url(image_path('masthead.jpg'));
+      repeat: no-repeat;
+      position: center top;
+    }
+  }
+}
+
+/* ============ content =========== */
+
+section .wrapper {
+  background: {
+    color: $blueDark;
+    image: url(image_path('left-barB.png'));
+    repeat: no-repeat;
+    position: left top;
+  }
   margin-bottom: 30px;
+  min-height: 817px;
 }
 
-h2 {
-  font-size: 1.2em;
-  margin-bottom: 30px;
-  font-weight: normal;
+.content {
+  width: 78%;
+  float:right;
+  padding: 15px;
+
+
+  .navbar {
+    background-color: $blueMedium;
+    height: 45px;
+
+    nav .chapter-nav {
+      padding-left: 10px;
+      li {
+        font-weight: 900;
+        color: $orangeMedium;
+        padding: 10px 5px;
+        text-transform: uppercase;
+        a {
+          padding: 0;
+          text-shadow: none;
+          &:hover {
+            color: $orangeMedium;
+          }
+        }
+      }
+    }
+
+    nav .page-nav {
+      height: 45px;
+      padding: 0;
+      li {
+        a {
+          padding: 5px 7px;
+        }
+      }
+    }
+  }
+
+  // .comic-image {
+  //   width: 740px;
+  // }
 }
 
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
+
+/* ============ footer ============ */
+
+footer {
+  background-color: $blueDark;
+  padding: 20px 0 60px 0;
+  border-top: {
+    width: 15px;
+    style: solid;
+    color: $purpleMedium;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 900;
+    color: $purpleLight;
+  }
+
+  p {
+    color: $blueLight;
+    font: {
+      size: 15px;
+      weight: 300;
+    }
+    line-height: 22px;
+  }
+
+  div#blurb {
+    padding-right:30px;
+  }
+
+  div#connect div.navbar {
+    background: none;
+    border:none;
+  }
 }

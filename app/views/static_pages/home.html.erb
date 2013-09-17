@@ -1,2 +1,20 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="navbar navbar-static-top">
+	<nav>
+		<ul class="nav pull-left chapter-nav">
+			<li>Chapter:</li>
+			<li><%= link_to "1",	'#' %></li>
+			<li><%= link_to "2",	'#' %></li>
+			<li><%= link_to "3", 	'#' %></li>
+			<li><%= link_to "4",	'#' %></li>
+		</ul>
+	</nav>
+	<nav>
+		<ul class="nav pull-right page-nav">
+			<li><%= link_to image_tag("prev.png", alt: "previous"), '#' %></li>
+			<li><%= link_to image_tag("next.png",	alt: "next"), '#' %></li>
+		</ul>
+	</nav>
+</div>
+<div class="comic-image">
+	<%= image_tag("5.jpg", alt: "comic sample") %>
+</div>

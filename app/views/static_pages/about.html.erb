@@ -1,13 +1,13 @@
 <% provide(:title, 'About') %>
 <div class="row">
-	<h2>About <%= @book.author %></h2>
-	<div>
+	<div id="author">
+		<h2>About <%= @book.author %></h2>
 		<%= simple_format(@book.author_about) %>
 	</div>
 </div>
 <div class="row">
-	<h2>About the comic</h2>
-	<div>
+	<div id="about">
+		<h2>About the Comic</h2>
 		<%= simple_format(@book.description) %>
 	</div>
 </div>

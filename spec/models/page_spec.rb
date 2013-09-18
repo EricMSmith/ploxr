@@ -8,7 +8,8 @@ describe Page do
   before do
   	@page = chapter.pages.build( 		title: "2-1", 
   						 			  				description: "Culpa qui officia deserunt mollit anim id est laborum",
-  															 filename: "sampleimage.jpg")
+  															 filename: "sampleimage.jpg",
+                      position_in_chapter: 3)
 	end
 
 	subject { @page }
@@ -17,6 +18,7 @@ describe Page do
 	it { should respond_to(:description) }
 	it { should respond_to(:filename) }
 	it { should respond_to(:chapter_id) }
+  it { should respond_to(:position_in_chapter) }
 
 	it { should be_valid }
 
@@ -39,6 +41,4 @@ describe Page do
   	before { @page.filename = nil }
   	it { should_not be_valid }
   end
-
-
 end

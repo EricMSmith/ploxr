@@ -1,10 +1,14 @@
 Ploxr::Application.routes.draw do
-  resources :chapters do
-    resources :pages
-  end
+  # resources  :chapter, :path => "chapter" do
+  #    resources  :pages, :except => ['show'],  :path => "page"
+  # end
 
+  resources :chapter, :path => "chapter"
+  resources :pages,   :path => "page"  
+  
   root 'static_pages#home'
-
+  # match '/chapter/:chapter_id/page/:position_in_chapter', to: 'pages#show', 
+  #      as: 'show_page', via: 'get'
   match '/about',     to: 'static_pages#about',     via: 'get'
   match '/subscribe', to: 'static_pages#subscribe', via: 'get'
 

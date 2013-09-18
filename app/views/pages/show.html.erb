@@ -3,14 +3,33 @@
 		<ul class="nav pull-left chapter-nav">
 			<li>Chapter:</li>
 			<% @chapters.each do |chapter| %>
-				<li><%= link_to chapter.id,	'#' %></li>
+				<li>
+					<% if chapter.id == @page.chapter_id %>
+						<%= link_to chapter.id,	"#", class: "active" %>
+					<% else %>
+						<%= link_to chapter.id,	"#" %>
+					<% end %>
+				</li>
 			<% end %>
 		</ul>
 	</nav>
 	<nav>
 		<ul class="nav pull-right page-nav">
-			<li><%#= link_to image_tag("prev.png", alt: "previous"), '#' %></li>
-			<li><%#= link_to image_tag("next.png",	alt: "next"), '#' %></li>
+			<li>
+				<% if @page.previous.presence %>
+					<%= link_to image_tag("prev.png", alt: "previous"), @page.previous %>
+				<% else %>
+					<%= image_tag("prev.png", alt: "First page", title: "You're on the first page.", class: "inactive") %>
+				<% end %>
+			</li>
+			<li>
+				<% if @page.next.presence %>
+					<%= link_to image_tag("next.png",	alt: "next"), @page.next %>
+				<% else %>
+					<%= image_tag("next.png", alt: "Last page", title: "You're on the last page.", class: "inactive") %>
+				<% end %>
+			</li>
+
 		</ul>
 	</nav>
 </div>

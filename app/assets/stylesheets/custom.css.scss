@@ -54,6 +54,13 @@ header {
       color: $purpleMedium;
     }
 
+    .navbar .btn-navbar {
+      background-color: $blueLight;
+      background-image: none;
+      margin:5px;
+      padding: 4px 7px;
+    }
+
     .nav {
       li {
         line-height: 30px;
@@ -72,6 +79,9 @@ header {
           &:hover {
             color: $purpleLight;
             text-decoration: underline;
+          }
+          &:focus {
+            color: $purpleLight;
           } 
         }
       }
@@ -80,6 +90,7 @@ header {
 
   .steve-hamaker {
     float: left;
+    padding-left: 15px;
     color: $orangeMedium;
     line-height: 30px;
     font: {
@@ -117,7 +128,7 @@ section .wrapper {
 }
 
 .content {
-  width: 78%;
+  width: 79%;
   float:right;
   padding: 15px;
 
@@ -125,6 +136,7 @@ section .wrapper {
   .navbar {
     background-color: $blueMedium;
     height: 45px;
+    width: 100%;
 
     nav .chapter-nav {
       padding-left: 10px;
@@ -225,6 +237,7 @@ footer {
     font-size: 16px;
     font-weight: 900;
     color: $purpleLight;
+    line-height: 20px;
   }
 
   p {
@@ -256,22 +269,13 @@ footer {
 
 /* ============ media rules =============== */
 
-@media (min-width : 200px) and 
-       (max-width : 480px) {
+@media (max-width: 480px) {
   
   header {
 
     .steve-hamaker {
       display:none;
     }
-
-    .navbar .btn-navbar {
-      background-color: $blueLight;
-      background-image: none;
-      margin:5px;
-      padding: 4px 7px;
-    }
-
 
     .masthead {
       margin: 4px auto;
@@ -298,9 +302,6 @@ footer {
 
   .container {
     margin:0;
-    .navbar {
-      margin: 0;
-    }
 
     .page-nav {
       margin: 0 auto;
@@ -339,23 +340,64 @@ footer {
           padding: 5px 10px;
           color: $purpleLight;
         }
-      }
+    }
 
-      div#author {
+    div#author {
         background: none;
         background-color: #ffffff;
+    }
+
+    div#about {
+      background: {
+        color: #ffffff;
+        image: url(image_path('city.jpg'));
+        position: right bottom;
+        repeat: no-repeat;
       }
+    }
+  }
 
-      div#about {
-        background: {
-          color: #ffffff;
-          image: url(image_path('city.jpg'));
-          position: right bottom;
-          repeat: no-repeat;
-        }
+  footer {
+    #share {
+      padding-top: 25px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  
+  header {
+    .navbar .btn-navbar {
+      background-color: $blueLight;
+      background-image: none;
+      margin:5px;
+      padding: 4px 7px;
+    }
+    .masthead {
+      width:100%;
+      overflow-x: hidden;
+      background-position: left top;
+    }
+  }
+
+  section .wrapper {
+    background: {
+      color: $blueDark;
+      image: none;
+      repeat: no-repeat;
+      position: left top;
+    }
+    margin-bottom: 10px;
+    min-height: 0;
+
+    .content {
+      float: none;
+      width: 100%;
+      padding: 0;
+      .navbar {
+        margin: 0;
       }
-
-
+    }
   }
 
   footer {
@@ -369,22 +411,28 @@ footer {
     #connect {
       padding-bottom: 25px;
     }
-    #share {
-      padding-top: 25px;
+  }
+
+
+  
+}
+
+@media (min-width: 768px) and (max-width: 940px) {
+
+  header {
+    .navbar .btn-navbar {
+      background-color: $blueLight;
+      background-image: none;
+      margin:5px;
+      padding: 4px 7px;
     }
   }
-}
 
-@media only screen and (min-device-width : 481px) and 
-                       (max-device-width : 979px) {
-  
-/* Styles */
-  
 }
 
 
 
-@media (min-width: 1200px) {
+@media (min-width: 1210px) {
   .container, .navbar-static-top .container, .navbar-fixed-top .container, 
   .navbar-fixed-bottom .container {
     width: 940px;

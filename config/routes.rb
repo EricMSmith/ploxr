@@ -1,16 +1,11 @@
 Ploxr::Application.routes.draw do
-  # resources  :chapter, :path => "chapter" do
-  #    resources  :pages, :except => ['show'],  :path => "page"
-  # end
-
   resources :chapters, :path => "chapter"
   resources :pages,   :path => "page"  
   
   root 'static_pages#home'
-  # match '/chapter/:chapter_id/page/:position_in_chapter', to: 'pages#show', 
-  #      as: 'show_page', via: 'get'
   match '/about',     to: 'static_pages#about',     via: 'get'
-  match '/subscribe', to: 'static_pages#subscribe', via: 'get'
+  match '/subscribe', to: 'pages#feed',
+                      defaults: { format: 'atom' }, via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

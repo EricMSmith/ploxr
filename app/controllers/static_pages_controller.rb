@@ -5,14 +5,7 @@ class StaticPagesController < ApplicationController
     @chapters = Chapter.all
   end
 
-  def subscribe
-  end
-
   def about
-  	if params[:id] == nil
-  		@book = Book.last
-  	else
-  		@book = Book.find(params[:id])
-  	end
+  	@book = Book.last
   end  
 end

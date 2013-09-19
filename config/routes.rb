@@ -3,7 +3,7 @@ Ploxr::Application.routes.draw do
   #    resources  :pages, :except => ['show'],  :path => "page"
   # end
 
-  resources :chapter, :path => "chapter"
+  resources :chapters, :path => "chapter"
   resources :pages,   :path => "page"  
   
   root 'static_pages#home'

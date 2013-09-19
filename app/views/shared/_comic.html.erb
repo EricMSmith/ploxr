@@ -5,9 +5,9 @@
 			<% @chapters.each do |chapter| %>
 				<li>
 					<% if chapter.id == @page.chapter_id %>
-						<%= link_to chapter.id,	"#", class: "active" %>
+						<%= link_to chapter.id,	chapter, class: "active" %>
 					<% else %>
-						<%= link_to chapter.id,	"#" %>
+						<%= link_to chapter.id,	chapter %>
 					<% end %>
 				</li>
 			<% end %>

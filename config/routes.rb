@@ -4,7 +4,7 @@ Ploxr::Application.routes.draw do
   
   root 'static_pages#home'
   match '/about',     to: 'static_pages#about',     via: 'get'
-  match '/subscribe', to: 'pages#feed',
+  match '/subscribe', to: 'pages#feed', as: :feed,
                       defaults: { format: 'atom' }, via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -8,6 +8,8 @@
 			  content="PLOX: A comic about people who happen to be gamers.">
 		<meta name="Author" content="Steve Hamaker">
 		<%= csrf_meta_tags %>
+		<%= auto_discovery_link_tag :atom, "/subscribe" %>
+		<%= auto_discovery_link_tag :rss, "/subscribe.rss" %>
 
 		<!-- Stylesheets -->
 		<%= stylesheet_link_tag    "application", media: "all", 

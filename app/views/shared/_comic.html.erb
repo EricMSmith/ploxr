@@ -17,14 +17,14 @@
 		<ul class="nav pull-right page-nav">
 			<li>
 				<% if @page.previous.presence %>
-					<%= link_to image_tag("prev.png", alt: "previous"), @page.previous %>
+					<%= link_to image_tag("prev.png", alt: "previous"), page_path(@page.previous, :anchor => "comic") %>
 				<% else %>
 					<%= image_tag("prev.png", alt: "First page", title: "You're on the first page.", class: "inactive") %>
 				<% end %>
 			</li>
 			<li>
 				<% if @page.next.presence %>
-					<%= link_to image_tag("next.png",	alt: "next"), @page.next %>
+					<%= link_to image_tag("next.png",	alt: "next"), page_path(@page.next, :anchor => "comic") %>
 				<% else %>
 					<%= image_tag("next.png", alt: "Last page", title: "You're on the last page.", class: "inactive") %>
 				<% end %>

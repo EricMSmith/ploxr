@@ -1,3 +1,7 @@
+$navbarCollapseWidth: 768px;
+@import "bootstrap";
+@import "bootstrap-responsive";
+
 /* mixins, variables */
 $purpleDark:    #330033;
 $purpleMedium:  #663366;
@@ -366,6 +370,25 @@ footer {
 
 @media (max-width: 768px) {
   
+  footer {
+
+    #blurb, #connect, #share {
+      padding: 15px 20px;
+    }
+    #blurb {
+      padding-bottom: 0;
+    }
+    #connect {
+      padding-bottom: 25px;
+    }
+  }
+
+
+  
+}
+
+@media (max-width: 979px) {
+
   header {
     .navbar .btn-navbar {
       background-color: $blueLight;
@@ -399,40 +422,10 @@ footer {
       }
     }
   }
-
-  footer {
-
-    #blurb, #connect, #share {
-      padding: 15px 20px;
-    }
-    #blurb {
-      padding-bottom: 0;
-    }
-    #connect {
-      padding-bottom: 25px;
-    }
-  }
-
-
-  
-}
-
-@media (min-width: 768px) and (max-width: 940px) {
-
-  header {
-    .navbar .btn-navbar {
-      background-color: $blueLight;
-      background-image: none;
-      margin:5px;
-      padding: 4px 7px;
-    }
-  }
-
 }
 
 
-
-@media (min-width: 1210px) {
+@media (min-width: 1200px) {
   .container, .navbar-static-top .container, .navbar-fixed-top .container, 
   .navbar-fixed-bottom .container {
     width: 940px;

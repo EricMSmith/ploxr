@@ -41,4 +41,9 @@ describe Page do
   	before { @page.filename = nil }
   	it { should_not be_valid }
   end
+
+  describe "when position_in_chapter is not present" do
+    before { @page.position_in_chapter = nil }
+    it { should_not be_valid }
+  end
 end

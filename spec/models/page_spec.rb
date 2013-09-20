@@ -19,6 +19,7 @@ describe Page do
 	it { should respond_to(:filename) }
 	it { should respond_to(:chapter_id) }
   it { should respond_to(:position_in_chapter) }
+  its(:chapter) { should eq chapter }
 
 	it { should be_valid }
 

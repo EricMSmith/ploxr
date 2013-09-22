@@ -3,9 +3,8 @@
 		<div class="row">
 		  <div class="span6">
 		  	<div id="blurb">
-			    <h3>Hell Is Other Players</h3>
-			    <p>What do you do when the virtual world you dedicated your life to gets unplugged and ripped away? <em>PLOX</em> is the online graphic novel that tells the story of Chad, the raid leader with no patience, Roy, the rational one that would rather play with dice and paper, and Kim, the guild leader at the end of her rope.</p>
-					<p>When the games we play forge our identity, hell is other players.</p>
+			    <h3><%= Book.last.title %></h3>
+			    <%= simple_format(Book.last.blurb) %>
 				</div>
 			</div>
 			<div class="span3">
@@ -24,19 +23,10 @@
 		  <div class="span3">
 		  	<div id="share">
 					<h3>Share PLOX</h3>
-	        <!-- AddThis Button BEGIN -->
-	        
-<!-- 						<div class="addthis_toolbox addthis_default_style ">
-		        <a class="addthis_button_preferred_1"></a>
-		        <a class="addthis_button_preferred_2"></a>
-		        <a class="addthis_button_preferred_3"></a>
-		        <a class="addthis_button_preferred_4"></a>
-		        <a class="addthis_button_compact"></a>
-		        <a class="addthis_counter addthis_bubble_style"></a>
-	        </div>
-	        <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4fc283477446b15d"></script> -->
-	      	
-	        <!-- AddThis Button END -->
+						<span class='st_facebook_large' displayText='Facebook'></span>
+						<span class='st_twitter_large' displayText='Tweet'></span>
+						<span class='st_tumblr_large' displayText='Tumblr'></span>
+						<span class='st_googleplus_large' displayText='Google +'></span>    	
       	</div>
 			</div>
 		</div><!-- /row -->

@@ -431,8 +431,13 @@ footer {
     width: 940px;
   }
 
-  footer .span3 {
-    width: 150px;
-    margin-left:20px;
+  footer {
+    .span6 {
+      width: 450px;
+    }
+
+    .span3 {
+      width: 200px;
+    }
   }
 }

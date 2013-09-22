@@ -17,16 +17,18 @@
 		<ul class="nav pull-right page-nav">
 			<li>
 				<% if @page.previous.presence %>
-					<%= link_to image_tag("prev.png", alt: "previous"), page_path(@page.previous) %>
+					<%= link_to image_tag("prev.png", alt: "previous"), 
+					    page_path(@page.previous), id: 'previous' %>
 				<% else %>
-					<%= image_tag("prev.png", alt: "First page", title: "You're on the first page.", class: "inactive") %>
+					<%= image_tag("prev.png", alt: "First page", title: "You're on the first page.", id: 'previous', class: "inactive") %>
 				<% end %>
 			</li>
 			<li>
 				<% if @page.next.presence %>
-					<%= link_to image_tag("next.png",	alt: "next"), page_path(@page.next) %>
+					<%= link_to image_tag("next.png",	alt: "next"), 
+					    page_path(@page.next), id: 'next' %>
 				<% else %>
-					<%= image_tag("next.png", alt: "Last page", title: "You're on the last page.", class: "inactive") %>
+					<%= image_tag("next.png", alt: "Last page", title: "You're on the last page.", id: 'next', class: "inactive") %>
 				<% end %>
 			</li>
 

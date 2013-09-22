@@ -13,11 +13,14 @@ Set against the Midwest paradigm of Columbus, Ohio, PLOX is the story of Chad, t
 
 Without irony or prejudice, PLOX celebrates the subculture of gaming - video, card, and tabletop - while exploring how the shroud of internet anonymity changes our real world relationships and identities.',
 						author:  			'Steve Hamaker',
-						author_about: 'Steve Hamaker is the Eisner and Harvey Award nominated colorist of the BONE graphic novels published by Scholastic.
+						author_about: 'Steve Hamaker is the Eisner and Harvey Award nominated colorist of the BONE graphic novels published by Scholastic. 
 
 In 2005 Steve self-published Fish N Chips Volume 1, and has contributed several stories to the anthology series, Flight.
 
-Steve works as freelance colorist and illustrator in Columbus, Ohio with his wife and son.')
+Steve works as freelance colorist and illustrator in Columbus, Ohio with his wife and son.',
+						blurb: 'What do you do when the virtual world you dedicated your life to gets unplugged and ripped away? PLOX is the online graphic novel that tells the story of Chad, the raid leader with no patience, Roy, the rational one that would rather play with dice and paper, and Kim, the guild leader at the end of her rope.
+					
+When the games we play forge our identity, hell is other players.')
 
 Chapter.create(title: 'Chad',
 				 description: 'Chad, a demanding guild leader, may have just pushed his online friends too far.',

@@ -23,9 +23,10 @@
 	  <!-- Fav and touch icons -->
 	  <%= favicon_link_tag 'favicon.ico' %>
 	  <%= favicon_link_tag 'favicon.ico', rel: 'apple-touch-icon', type: 'image/png' %>
-
-	  <!-- Share This -->
-	  <%= render 'layouts/sharethis' %>
+	  <% if Rails.env.production? %>
+	  	<!-- Share This -->
+	  	<%= render 'layouts/sharethis' %>
+	  <% end %>
 
 	  <% # Add Google Analytics at launch %>
 	  <% # ID: UA-42540201-1 %>

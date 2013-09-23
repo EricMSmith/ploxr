@@ -20,12 +20,12 @@ describe "Static pages" do
 			page.should have_content("#{Book.last.blurb}")
 		end
 
-		it "should have social share buttons" do
-			page.should have_css("span.st_facebook_large")
-			page.should have_css("span.st_twitter_large")
-			page.should have_css("span.st_tumblr_large")
-			page.should have_css("span.st_googleplus_large")
-		end
+		# it "should have social share buttons" do
+		# 	page.should have_css("span.st_facebook_large")
+		# 	page.should have_css("span.st_twitter_large")
+		# 	page.should have_css("span.st_tumblr_large")
+		# 	page.should have_css("span.st_googleplus_large")
+		# end
 	end
 
 	describe "Home page" do

@@ -38,6 +38,11 @@
 		<section>
 			<div class="container wrapper">
 						<div class="content">
+
+				      <% flash.each do |key, value| %>
+				        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+				      <% end %>
+							
 							<%= yield %>
 						</div>
 			</div><!-- /container -->

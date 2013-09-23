@@ -5,6 +5,10 @@ class PagesController < ApplicationController
 		@page = Page.find(params[:id])
 	end
 
+	def index
+		@user = current_user
+	end
+
 	def feed
 		@title = "PLOX : By Steve Hamaker"
 		@pages = Page.order("updated_at desc")

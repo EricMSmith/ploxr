@@ -4,7 +4,7 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.0'
 gem 'bootstrap-sass', '2.3.2.0'
-gem 'newrelic_rpm'
+gem 'bcrypt-ruby', '3.0.1'
 
 group :development, :test do
   gem 'sqlite3', '1.3.7'
@@ -35,4 +35,5 @@ end
 group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
+  gem 'newrelic_rpm'
 end

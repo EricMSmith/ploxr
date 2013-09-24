@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">	
+		<title>ADMIN : <%= full_title(yield(:title)) %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="Description"
+			  content="PLOX: A comic about people who happen to be gamers.">
+		<meta name="Author" content="Steve Hamaker">
+		<meta name="Robots" content="noindex, nofollow"/>
+		<%= csrf_meta_tags %>
+
+		<!-- Stylesheets -->
+		<%= stylesheet_link_tag    "application", media: "all", 
+	  													 "data-turbolinks-track" => true %>
+
+	  <%= render 'layouts/shim' %>
+
+	  <!-- Javascripts -->
+	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+	  <!-- Fav and touch icons -->
+	  <%= favicon_link_tag 'favicon.ico' %>
+	  <%= favicon_link_tag 'favicon.ico', rel: 'apple-touch-icon', type: 'image/png' %>
+	</head>
+	<body>
+
+		<%= render 'layouts/admin_header' %>
+
+		<section>
+			<div class="container admin_wrapper">
+						<div class="content">
+
+				      <% flash.each do |key, value| %>
+				        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+				      <% end %>
+							
+							<%= yield %>
+						</div>
+			</div><!-- /container -->
+		</section>
+
+		<%= render 'layouts/admin_footer' %>
+
+	</body>
+</html>

@@ -1,6 +1,7 @@
 Ploxr::Application.routes.draw do
   resources :chapters, :path => "chapter"
-  resources :pages,   :path => "page"  
+  resources :pages,   :path => "page"
+  resources :books,   :path => "book"   
   resources :sessions, only: [:new, :create, :destroy]
   namespace :admin do
     resources :books, :chapters, :pages

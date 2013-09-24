@@ -1,2 +1,26 @@
-<% provide(:title, 'Admin, y\'all') %>
-<h1>Admin</h1>
+<% provide(:title, 'Admin') %>
+
+			<h1>Admin</h1>
+
+			<h2><%= @book.title %></h2>
+			<p><%= link_to "Edit", edit_admin_book_path(@book.id) %></p>
+			<h3>Description</h3>
+			<p><%= simple_format(@book.description) %></p>
+			<h3>Blurb</h3>
+			<p><%= simple_format(@book.blurb) %></p>
+			<h3>About the author, <%= @book.author %></h3>
+			<p><%= simple_format(@book.author_about) %></p>
+
+			<ul>
+				<% @chapters.each do |chapter| %>
+				<li>Chapter <%= chapter.id %> <%= link_to "Edit", edit_admin_chapter_path(chapter.id) %>
+					<ul>
+							<% chapter.pages.each do |page| %>
+								<li>Page <%= page.position_in_chapter %> <%= link_to "Edit", edit_admin_page_path(page.id) %></li>
+							<% end %>
+							<li><%= link_to "Add a Page", new_admin_page_path %></li>
+					</ul>
+				</li>
+				<% end %>
+				<li><%= link_to "Add a Chapter", new_admin_chapter_path %></li>
+			</ul>

@@ -1,3 +1,31 @@
 <% provide(:title, 'Admin : Edit Page') %>
 <h1>Edit Page</h1>
 <h2>Chapter <%= @page.chapter.id %>, Page <%= @page.position_in_chapter %></h2>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for [:admin, @page] do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label 		 :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label 		 :description %>
+      <%= f.text_area  :description %>
+
+      <%= f.label			 :chapter_id %>
+      <%= f.collection_select :chapter_id, Chapter.all, 
+      												:id, :full_chapter_title	   %>
+
+      <%# position isn't working %>
+      <%= f.label			 :position_in_chapter %>
+      <%= f.select     :position_in_chapter, 1..@page_count %>				
+
+      <%# filename to come %>
+
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+		<%= link_to "Cancel", admin_path %>
+  </div>
+</div>

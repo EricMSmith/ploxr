@@ -1,4 +1,8 @@
+#require 'lib/position_mover'
 class Page < ActiveRecord::Base
+
+  #include PositionMover
+
 	belongs_to 	:chapter
 	validates		:title, 							presence: true
 	validates		:description, 				presence: true
@@ -16,4 +20,10 @@ class Page < ActiveRecord::Base
   def previous
     Page.previous(self.id).first
   end
+
+  private
+  
+	  def position_scope
+	    "pages.chapter_id = #{chapter_id.to_i}"
+	  end
 end

@@ -5,4 +5,7 @@ class Chapter < ActiveRecord::Base
 	validates  :description, 	presence: true
 	validates  :book_id, 			presence: true
 
+  def full_chapter_title
+    "#{id}: #{title}"
+  end
 end

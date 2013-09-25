@@ -15,9 +15,18 @@ describe "Admin" do
 				it { should have_link('Cancel', admin_path ) }
 			end
 
-			describe "with invalid information" do
+			describe "with valid information" do
 				before { click_button "Save changes" }
 
+				it { should have_content('Book updated') }
+			end
+
+			describe "with invalid information" do
+				before do
+					fill_in "Title", 	with: ""
+					click_button "Save changes"
+				end
+				
 				it { should have_content('error') }
 			end
 		end

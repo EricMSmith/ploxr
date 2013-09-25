@@ -1,8 +1,7 @@
 class Admin::BooksController < Admin::BaseController
 	
 	def index
-		@book = Book.last
-		@chapters = @book.chapters.all
+		@book = Book.first
 	end
 
 	def edit
@@ -11,7 +10,7 @@ class Admin::BooksController < Admin::BaseController
 
 	def update
 		@book = Book.find(params[:id])
-		if @book.update_attributes(params[book_params])
+		if @book.update_attributes(book_params)
       flash[:success] = "Book updated"
       redirect_to admin_path
     else
@@ -22,7 +21,7 @@ class Admin::BooksController < Admin::BaseController
 	private
 
 		def book_params
-	    params.require(:book).permit(:title, :description, :author, :author_about)
+	    params.require(:book).permit(:title, :description, :blurb, :author, :author_about)
 	  end
 
 end

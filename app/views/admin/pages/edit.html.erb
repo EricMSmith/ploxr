@@ -1,14 +1,12 @@
-<% provide(:title, 'Admin : Edit Page') %>
-<h1>Edit Page</h1>
-<h2>Chapter <%= @page.chapter.id %>, Page <%= @page.position_in_chapter %></h2>
+<% provide(:title, 'Edit Page') %>
 
-<div class="row">
-  <div class="span6 offset3">
+<div class="book">
+<h1>Edit Chapter <%= @page.chapter.id %>, Page <%= @page.position_in_chapter %></h1>
     <%= form_for [:admin, @page] do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
       <%= f.label 		 :title %>
-      <%= f.text_field :title %>
+      <p><%= @page.chapter.id %>-<%= @page.position_in_chapter %></p>
 
       <%= f.label 		 :description %>
       <%= f.text_area  :description %>

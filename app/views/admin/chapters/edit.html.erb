@@ -1,8 +1,8 @@
-<% provide(:title, 'Admin : Edit Chapter') %>
+<% provide(:title, 'Edit Chapter') %>
+
+<div class="book">
 <h1>Edit Chapter</h1>
 
-<div class="row">
-  <div class="span6 offset3">
     <%= form_for [:admin, @chapter] do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
@@ -16,5 +16,4 @@
     <% end %>
 
 		<%= link_to "Cancel", admin_path %>
-  </div>
 </div>

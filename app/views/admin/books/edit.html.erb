@@ -1,31 +1,30 @@
-<% provide(:title, 'Admin : Edit Book') %>
-<h1>Edit Book</h1>
-<h2>Title: <%= @book.title %></h2>
+<% provide(:title, 'Edit Book') %>
 
+<div class="book">
+  <h1>Edit Book</h1>
 
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for [:admin, @book] do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
+      <%= form_for [:admin, @book] do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :title %>
-      <%= f.text_field :title %>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
 
-      <%= f.label :description %>
-      <%= f.text_area :description %>
+        <%= f.label :description %>
+        <%= f.text_area :description %>
 
-      <%= f.label :blurb %>
-      <%= f.text_area :blurb %>
+        <%= f.label :blurb %>
+        <%= f.text_area :blurb %>
 
-      <%= f.label :author %>
-      <%= f.text_field :author %>
+        <%= f.label :author %>
+        <%= f.text_field :author %>
 
-      <%= f.label :author_about %>
-      <%= f.text_area :author_about %>
+        <%= f.label :author_about %>
+        <%= f.text_area :author_about %>
 
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-    <% end %>
+        <%= f.submit "Save changes", class: "btn btn-large" %>
+      <% end %>
 
-		<%= link_to "Cancel", admin_path %>
-  </div>
+  		<%= link_to "Cancel", admin_path %>
+
 </div>
+

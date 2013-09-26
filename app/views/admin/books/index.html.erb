@@ -13,7 +13,7 @@
 		<h3>About the author, <%= @book.author %></h3>
 		<p><%= simple_format(@book.author_about) %></p>
 	</div>
-	<button type="button" class="btn btn-small pull-right" data-toggle="collapse" data-target="#book_more"><i class='icon-resize-vertical icon-white'></i> MORE</button>
+	<a class="more pull-right" data-toggle="collapse" data-target="#book_more"><i class='icon-resize-vertical icon-white'></i> MORE</a>
 
 	<div class="contents accordion" id="accordion2">	
 		<% @book.chapters.each do |chapter| %>
@@ -31,13 +31,13 @@
 	 		<% end %>
 	 			<div class="accordion-inner">
 					<ul>
-							<% chapter.pages.each do |page| %>
+							<% chapter.pages.order("position_in_chapter ASC").each do |page| %>
 								<li>Page <%= page.position_in_chapter %> <%= link_to "Edit", edit_admin_page_path(page.id) %></li>
 							<% end %>
 							<li><%= link_to "Add a Page", new_admin_page_path %></li>
 					</ul>
 				</div><!-- /accordion-inner -->
-			</div><!-- /#collapse1 -->
+			</div><!-- /#collapse -->
 		</div><!-- /accordion-group -->
 		<% end %>
 	</div><!-- /contents -->

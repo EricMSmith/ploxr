@@ -1,0 +1,29 @@
+<% provide(:title, 'Add a Page') %>
+
+<div class="book">
+<h1>Add a Page</h1>
+
+    <%= form_for [:admin, @page] do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label 		 :title %>
+      <p><%= @page.chapter_id %>-<%= @page.position_in_chapter %></p>
+
+      <%= f.label 		 :description %>
+      <%= f.text_area  :description %>
+
+      <%= f.label			 :chapter_id %>
+      <p><%= @page.chapter_id %></p>
+      <%= f.hidden_field(:chapter_id, value: @page.chapter_id) %>
+
+      <%= f.label			 :position_in_chapter %>
+      <p><%= @page.position_in_chapter %></p>
+      <%= f.hidden_field(:position_in_chapter, value: @page.position_in_chapter) %>
+
+      <%# filename to come %>
+
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+		<%= link_to "Cancel", admin_path %>
+</div>

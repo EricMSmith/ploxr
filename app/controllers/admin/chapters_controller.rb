@@ -4,9 +4,18 @@ class Admin::ChaptersController < Admin::BaseController
 	end
 
 	def new
+		@chapter = Chapter.new
 	end
 
 	def create
+		@chapter = Chapter.new(chapter_params)
+		@chapter.book_id = 1
+		if @chapter.save
+			flash[:success] = "Chapter created!"
+			redirect_to admin_path
+		else
+			render 'new'
+		end
 	end
 
 	def edit

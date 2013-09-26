@@ -34,7 +34,7 @@
 							<% chapter.pages.order("position_in_chapter ASC").each do |page| %>
 								<li>Page <%= page.position_in_chapter %> <%= link_to "Edit", edit_admin_page_path(page.id) %></li>
 							<% end %>
-							<li><%= link_to "Add a Page", new_admin_page_path %></li>
+							<li><%= link_to "Add a Page", new_admin_page_path(:chapter_id => chapter.id) %></li>
 					</ul>
 				</div><!-- /accordion-inner -->
 			</div><!-- /#collapse -->

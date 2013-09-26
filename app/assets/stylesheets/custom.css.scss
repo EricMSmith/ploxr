@@ -306,7 +306,7 @@ footer {
   .field_with_errors {
     @extend .control-group;
     @extend .error;
-    input {
+    input, textarea {
       color: $purpleMedium;
       &:focus {
         border-color: #953b39;

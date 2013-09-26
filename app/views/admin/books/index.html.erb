@@ -1,26 +1,45 @@
 <% provide(:title, 'Admin') %>
 
-			<h1>Admin</h1>
+<div class="book">
+			
+	<img src="http://placehold.it/300x350/717174/ffffff" class="book_cover img-rounded pull-left">
+	<h1>PLOX</h1>
+	<h2><%= @book.title %></h2>
+	<p><%= link_to "<i class='icon-wrench icon-white'></i> EDIT".html_safe, edit_admin_book_path(@book.id), class: "btn btn-small" %></p>
+	<p><%= simple_format(@book.blurb) %></p>
+	<div id="book_more" class="collapse">
+		<h3>Description</h3>
+		<p><%= simple_format(@book.description) %></p>
+		<h3>About the author, <%= @book.author %></h3>
+		<p><%= simple_format(@book.author_about) %></p>
+	</div>
+	<button type="button" class="btn btn-small pull-right" data-toggle="collapse" data-target="#book_more"><i class='icon-resize-vertical icon-white'></i> MORE</button>
 
-			<h2><%= @book.title %></h2>
-			<p><%= link_to "Edit", edit_admin_book_path(@book.id) %></p>
-			<h3>Description</h3>
-			<p><%= simple_format(@book.description) %></p>
-			<h3>Blurb</h3>
-			<p><%= simple_format(@book.blurb) %></p>
-			<h3>About the author, <%= @book.author %></h3>
-			<p><%= simple_format(@book.author_about) %></p>
-
-			<ul>
-				<% @book.chapters.each do |chapter| %>
-				<li>Chapter <%= chapter.id %> <%= link_to "Edit", edit_admin_chapter_path(chapter.id) %>
+	<div class="contents accordion" id="accordion2">	
+		<% @book.chapters.each do |chapter| %>
+		 <div class="accordion-group">
+			<div class="accordion-heading">
+				<%= link_to "<i class='icon-wrench icon-white'></i>".html_safe, edit_admin_chapter_path(chapter.id), class: "btn btn-mini pull-right" %>
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= chapter.id %>">
+					Chapter <%= chapter.id %>. <%= chapter.title %>
+				</a> 			
+	 		</div><!-- /accordion-heading -->
+	 		<% if chapter == @book.chapters.last %>
+	 		<div id="collapse<%= chapter.id %>" class="accordion-body collapse in">
+	 		<% else %>
+			<div id="collapse<%= chapter.id %>" class="accordion-body collapse">
+	 		<% end %>
+	 			<div class="accordion-inner">
 					<ul>
 							<% chapter.pages.each do |page| %>
 								<li>Page <%= page.position_in_chapter %> <%= link_to "Edit", edit_admin_page_path(page.id) %></li>
 							<% end %>
 							<li><%= link_to "Add a Page", new_admin_page_path %></li>
 					</ul>
-				</li>
-				<% end %>
-				<li><%= link_to "Add a Chapter", new_admin_chapter_path %></li>
-			</ul>
+				</div><!-- /accordion-inner -->
+			</div><!-- /#collapse1 -->
+		</div><!-- /accordion-group -->
+		<% end %>
+	</div><!-- /contents -->
+	<%= link_to "<i class='icon-plus icon-white'></i> ADD A CHAPTER".html_safe, new_admin_chapter_path, class: "btn btn-big" %>
+</div>

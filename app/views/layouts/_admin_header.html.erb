@@ -1,20 +1,20 @@
 <header>
 	<div class="navbar navbar-static-top">
 			<div class="container">
-				<%= link_to "View full site", root_path, target: '_blank',
-																				 class: 'steve-hamaker' %>
-
- 				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
+				<span class="brand">ADMIN</span>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li><%= link_to "View site", root_path, target: '_blank',
+																				 class: 'steve-hamaker' %></li>
+					</ul>
+				</div>
 
 				<div class="nav-collapse collapse">
 					<nav>
 							<ul class="nav pull-right">
-								<li>Hello, (name)!</li>
-								<li><%= link_to "About", about_path %></li>
+								<li><img src="http://placehold.it/24x24/717174/000000" class="img-rounded"></li>
+								<li>Steve Hamaker</li>
+								<li><%= link_to "Sign Out", about_path %></li>
 							</ul>
 					</nav>
 				</div>

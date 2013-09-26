@@ -6,12 +6,14 @@ $navbarCollapseWidth: 768px;
 $purpleDark:    #330033;
 $purpleMedium:  #663366;
 $purpleLight:   #996699;
+$purplePink:     #D4A1D4;
 $orangeMedium:  #cc9966;
 $blueMedium:    #222941;
 $blueLight:     #5d6e85;
 $blueDark:      #000033;
 $greyMedium:    #717174;
-$grayMediumLight: #eaeaea;
+$greyMediumLight: #eaeaea;
+$greyDark:      #666666;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -304,26 +306,82 @@ footer {
 }
 
 /* ============ ADMIN =============== */
-.admin_masthead {
-  height: 115px;
-  width: 940px;
-  background: {
-    image: url(image_path('admin-masthead.jpg'));
-    repeat: no-repeat;
-    position: center top;
-  }
-}
 
-section .admin_wrapper {
-  background-color: $blueDark;
-  margin-bottom: 30px;
-  min-height: 817px;
-  .content {
-    background-color: $blueMedium;
-    float:none;
-    width:93%;
-    margin:15px auto;
-    padding: 15px;
+.admin {
+
+  .alert-success {
+    background-color: $greyMediumLight;
+    border-color: $purpleLight;
+    color: $purpleMedium;
+    text-shadow: none;
+    opacity: 0.75;
+  }
+
+  .navbar {
+    color: $greyMedium;
+    .nav {
+      li {
+          padding:4px;
+      }
+    }
+    .brand {
+      text-shadow: none;
+      padding: 10px 5px 10px 20px;
+    }
+  }
+
+  .admin_masthead {
+    height: 115px;
+    width: 940px;
+    background: {
+      image: url(image_path('admin-masthead.jpg'));
+      repeat: no-repeat;
+      position: center top;
+    }
+  }
+
+    section .admin_wrapper {
+    background-color: $blueDark;
+    margin-bottom: 30px;
+    min-height: 817px;
+    .content {
+      background-color: $blueMedium;
+      float:none;
+      width:93%;
+      margin:15px auto;
+      padding: 15px;
+
+      .book {
+        color: $greyMediumLight;
+        padding: 30px;
+        .book_cover {
+          margin:0 20px 20px 0;
+        }
+        h1 {
+          color: $purpleLight;
+        }
+        .btn {
+          background-color: $blueLight;
+          background-image: none;
+          text-shadow: none;
+          color: white;
+        }
+        .contents {
+          clear:both;
+          margin-top:60px;
+          .accordion-heading {
+            background-color: $blueDark;
+            &:hover {
+              background-color: $blueMedium;
+            }
+          }
+          .accordion-inner {
+            background-color: $greyMediumLight;
+            color: $greyDark;
+          }
+        }
+      }
+    }
   }
 }
 

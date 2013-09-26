@@ -30,11 +30,18 @@ class Admin::PagesController < Admin::BaseController
 	def update
 		@page = Page.find(params[:id])
 		if @page.update_attributes(page_params)
-			flash[:success] = "Page updated"
+			flash[:success] = "Page updated."
 			redirect_to admin_path
 		else
 			render 'edit'
 		end
+	end
+
+	def destroy
+		page = Page.find(params[:id])
+		page.destroy
+		flash[:success] = "Page deleted."
+		redirect_to admin_path
 	end
 
 	private

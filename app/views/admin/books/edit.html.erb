@@ -6,25 +6,42 @@
       <%= form_for [:admin, @book] do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
 
-        <%= f.label :title %>
-        <%= f.text_field :title %>
+        <div class="row image_area">
+          <div class="span3">
+          <%= image_tag("http://placehold.it/270x317/717174/ffffff",
+                        class: "image_preview img-rounded pull-left") %>
+          </div>
+          <div class="span5">
+            <p>Filename: TBD</p>
+            <p>Filesize: TBD</p>
+            <%= link_to "Upload a new image", "#" %>
+          </div>
+        </div>
 
-        <%= f.label :description %>
-        <%= f.text_area :description %>
+        <div class="object_meta">
 
-        <%= f.label :blurb %>
-        <%= f.text_area :blurb %>
+          <%= f.label :title %>
+          <%= f.text_field :title %>
 
-        <%= f.label :author %>
-        <%= f.text_field :author %>
+          <%= f.label :description %>
+          <%= f.text_area :description %>
 
-        <%= f.label :author_about %>
-        <%= f.text_area :author_about %>
+          <%= f.label :blurb %>
+          <%= f.text_area :blurb %>
 
-        <%= f.submit "Save changes", class: "btn btn-large" %>
+          <%= f.label :author %>
+          <%= f.text_field :author %>
+
+          <%= f.label :author_about %>
+          <%= f.text_area :author_about %>
+
+          <div class="buttons">
+          <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+          <%= link_to "Cancel", admin_path %>
+        </div>
+
+      </div>
       <% end %>
-
-  		<%= link_to "Cancel", admin_path %>
 
 </div>
 

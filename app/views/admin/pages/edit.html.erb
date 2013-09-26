@@ -5,25 +5,45 @@
     <%= form_for [:admin, @page] do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label 		 :title %>
-      <p><%= @page.chapter.id %>-<%= @page.position_in_chapter %></p>
 
-      <%= f.label 		 :description %>
-      <%= f.text_area  :description %>
+        <%= image_tag("http://placehold.it/350x250/717174/ffffff",
+                      class: "image_preview img-rounded pull-left") %>
 
-      <%= f.label			 :chapter_id %>
-      <%= f.collection_select :chapter_id, Chapter.all, 
-      												:id, :full_chapter_title	   %>
+          <p>Filename: <em><%= @page.filename %></em></p>
+          <p>Filesize: TBD</p>
+          <%= link_to "Upload a new image", "#" %>
 
-      <%# position isn't working %>
-      <%= f.label			 :position_in_chapter %>
-      <%= f.select     :position_in_chapter, (1..@page_count.to_i) %>
 
-      <%# filename to come %>
+      <div class="object_meta">
 
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+        <%= f.label 		 :description %>
+        <%= f.text_area  :description %>
+
+        <%= f.label			 :chapter_id %>
+        <%= f.collection_select :chapter_id, Chapter.all, 
+        												:id, :full_chapter_title	   %>
+
+        <%# position isn't working %>
+        <%= f.label			 :position_in_chapter %>
+        <%= f.select     :position_in_chapter, (1..@page_count.to_i) %>
+
+        <%# filename to come %>
+
+        <div class="buttons">
+        <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+        <%= link_to "Cancel", admin_path, class: "cancel" %>
+        </div>
+
+      </div>
     <% end %>
 
-		<%= link_to "Cancel", admin_path %>
+    <div class="delete_wrapper well">
+      <%= link_to "<i class='icon-trash icon-white'></i> DELETE PAGE".html_safe, 
+                  admin_page_path(@page.id),
+                  method: :delete,
+                  data: { confirm: "Hey man, you sure?" },
+                  title: "#{@page.title}: #{@page.description}",
+                  class: "btn btn-big btn-delete pull-right" %>
+    </div>
   </div>
 </div>

@@ -32,6 +32,13 @@ class Admin::ChaptersController < Admin::BaseController
 		end
 	end
 
+	def destroy
+		chapter = Chapter.find(params[:id])
+		chapter.destroy
+		flash[:success] = "Chapter deleted."
+		redirect_to admin_path
+	end
+
 	private
 
 		def chapter_params

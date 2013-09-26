@@ -12,8 +12,9 @@
       <%= f.label 		 :description %>
       <%= f.text_area  :description %>
 
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+      <div class="buttons">
+      <%= f.submit "Create Chapter", class: "btn btn-large btn-primary" %>
+      <%= link_to "Cancel", admin_path %>
+      </div>
     <% end %>
-
-		<%= link_to "Cancel", admin_path %>
 </div>

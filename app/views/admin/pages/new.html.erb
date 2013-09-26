@@ -22,8 +22,9 @@
 
       <%# filename to come %>
 
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+      <div class="buttons">
+      <%= f.submit "Create Page", class: "btn btn-large btn-primary" %>
+      <%= link_to "Cancel", admin_path %>
+      </div>
     <% end %>
-
-		<%= link_to "Cancel", admin_path %>
 </div>

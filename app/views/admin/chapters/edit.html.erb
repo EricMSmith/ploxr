@@ -12,8 +12,19 @@
       <%= f.label 		 :description %>
       <%= f.text_area  :description %>
 
+      <div class="buttons">
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+      <%= link_to "Cancel", admin_path %>
+    	</div>
     <% end %>
 
-		<%= link_to "Cancel", admin_path %>
+    <div class="delete_wrapper well">
+      <%= link_to "<i class='icon-trash icon-white'></i> DELETE CHAPTER".html_safe, 
+                  admin_chapter_path(@chapter.id),
+                  method: :delete,
+                  data: { confirm: "Hey man, you sure? This will delete all the pages in this chapter, too!" },
+                  title: "Chapter #{@chapter.id}: #{@chapter.title}}",
+                  class: "btn btn-big btn-delete pull-right" %>
+    </div>
+
 </div>

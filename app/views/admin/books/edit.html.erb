@@ -8,13 +8,19 @@
 
         <div class="row image_area">
           <div class="span3">
-          <%= image_tag("http://placehold.it/270x317/717174/ffffff",
-                        class: "image_preview img-rounded pull-left") %>
+          <%= image_tag @book.cover.url(:medium), 
+                        class: "image_preview img-rounded pull-left" %>
           </div>
           <div class="span5">
-            <p>Filename: TBD</p>
-            <p>Filesize: TBD</p>
-            <%= link_to "Upload a new image", "#" %>
+            
+            <label>File</label>
+            <p><%= @book.cover_file_name %></p>
+            
+            <label>Size</label>
+            <p><%= number_to_human_size(@book.cover_file_size) %></p>
+
+            <label>Upload a different cover:</label>
+              <%= f.file_field :cover, width: "100" %>
           </div>
         </div>
 

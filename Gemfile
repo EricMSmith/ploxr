@@ -8,6 +8,7 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'paperclip', '~> 3.0'
 gem 'aws-sdk', '~> 1.0'
 
+
 group :development, :test do
   gem 'sqlite3', '1.3.7'
   gem 'rspec-rails', '2.13.1'

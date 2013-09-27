@@ -1,20 +1,27 @@
 <% provide(:title, 'Edit Page') %>
 
 <div class="book">
-<h1>Edit Chapter <%= @page.chapter.id %>, Page <%= @page.position_in_chapter %></h1>
+<h1>Edit Page <%= @page.position_in_chapter %> of Chapter <%= @page.chapter.id %></h1>
     <%= form_for [:admin, @page] do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
+      <div class="row image_area">
+        <div class="span3">
+        <%= image_tag @page.image.url(:medium),
+                      class: "image_preview img-rounded pull-left" %>
+        </div>
 
-        <%= image_tag @page.image.url %>
+        <div class="span5">
+          <label>File</label>
+          <p><%= @page.image_file_name %></p>
 
-        <%= image_tag("http://placehold.it/350x250/717174/ffffff",
-                      class: "image_preview img-rounded pull-left") %>
+          <label>Size</label>
+          <p><%= number_to_human_size(@page.image_file_size) %></p>
 
-          <p>Filename: <em><%= @page.image_file_name %></em></p>
-          <p>Filesize: <em><%= @page.image_file_size %></em></p>
+          <label>Upload a different image:</label>
           <%= f.file_field :image %>
-
+        </div>
+      </div>
 
       <div class="object_meta">
 

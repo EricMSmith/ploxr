@@ -350,21 +350,45 @@ footer {
         .contents {
           clear:both;
           margin-top:60px;
+
+          .accordion-group {
+            border: 1px solid $blueLight;
+          }
+
           .accordion-heading {
             background-color: $blueDark;
             &:hover {
               background-color: $blueMedium;
             }
+
+            .edit-chapter {
+              margin:7px;
+            }
           }
           .accordion-inner {
             background-color: $greyMediumLight;
             color: $greyDark;
+
+            .comic-pages {
+              margin:20px 40px;
+              li {
+                margin:10px;
+              }
+            }
+
+            .add-page {
+              margin:30px;
+            }
           }
         }
       }
     }
   }
   /* forms */
+
+  label {
+    color: $purplePink;
+  }
 
   #error_explanation {
     color: $purplePink;
@@ -406,6 +430,10 @@ footer {
 
   input, textarea, .uneditable-input {
     width: 600px; 
+  }
+
+  input[type="file"] {
+    width: 200px;
   }
 
   .buttons {

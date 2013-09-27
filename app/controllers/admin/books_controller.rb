@@ -21,7 +21,7 @@ class Admin::BooksController < Admin::BaseController
 	private
 
 		def book_params
-	    params.require(:book).permit(:title, :description, :blurb, :author, :author_about)
+	    params.require(:book).permit(:title, :description, :blurb, :author, :author_about, :cover)
 	  end
 
 end

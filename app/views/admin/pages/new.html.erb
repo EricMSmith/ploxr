@@ -1,33 +1,45 @@
 <% provide(:title, 'Add a Page') %>
 
 <div class="book">
-<h1>Add a Page</h1>
+<h1>Add a Page to Chapter <%= @page.chapter_id %></h1>
 
     <%= form_for [:admin, @page] do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :image %><br />
-      <%= f.file_field :image %>
+      <div class="row image_area">
+        <div class="span3">
+        <%= image_tag @page.image.url(:medium),
+                      class: "image_preview img-rounded pull-left" %>
+        </div>
 
-      <%= f.label 		 :title %>
-      <p><%= @page.chapter_id %>-<%= @page.position_in_chapter %></p>
+        <div class="span5">
+          <label>File</label>
+          <p><%= @page.image_file_name %></p>
 
-      <%= f.label 		 :description %>
-      <%= f.text_area  :description %>
+          <label>Size</label>
+          <p><%= number_to_human_size(@page.image_file_size) %></p>
 
-      <%= f.label			 :chapter_id %>
-      <p><%= @page.chapter_id %></p>
-      <%= f.hidden_field(:chapter_id, value: @page.chapter_id) %>
+          <label>Upload a different image:</label>
+          <%= f.file_field :image %>
+        </div>
+      </div>
 
-      <%= f.label			 :position_in_chapter %>
-      <p><%= @page.position_in_chapter %></p>
-      <%= f.hidden_field(:position_in_chapter, value: @page.position_in_chapter) %>
+      <div class="object_meta">
 
-      <%# filename to come %>
+        <%= f.label 		 :description %>
+        <%= f.text_area  :description %>
 
-      <div class="buttons">
-      <%= f.submit "Create Page", class: "btn btn-large btn-primary" %>
-      <%= link_to "Cancel", admin_path %>
+        <%= f.hidden_field(:chapter_id, value: @page.chapter_id) %>
+
+        <%= f.label			 :position_in_chapter %>
+        <p><%= @page.position_in_chapter %></p>
+        <%= f.hidden_field(:position_in_chapter, value: @page.position_in_chapter) %>
+
+        <div class="buttons">
+        <%= f.submit "Add Page", class: "btn btn-large btn-primary" %>
+        <%= link_to "Cancel", admin_path %>
+        </div>
+
       </div>
     <% end %>
 </div>

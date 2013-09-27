@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130927010453) do
+ActiveRecord::Schema.define(version: 20130927112959) do
 
   create_table "admin_users", force: true do |t|
     t.string   "first_name"
@@ -33,6 +33,10 @@ ActiveRecord::Schema.define(version: 20130927010453) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "blurb"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
   end
 
   create_table "chapters", force: true do |t|

@@ -6,12 +6,14 @@
       <%= render 'shared/error_messages', object: f.object %>
 
 
+        <%= image_tag @page.image.url %>
+
         <%= image_tag("http://placehold.it/350x250/717174/ffffff",
                       class: "image_preview img-rounded pull-left") %>
 
-          <p>Filename: <em><%= @page.filename %></em></p>
-          <p>Filesize: TBD</p>
-          <%= link_to "Upload a new image", "#" %>
+          <p>Filename: <em><%= @page.image_file_name %></em></p>
+          <p>Filesize: <em><%= @page.image_file_size %></em></p>
+          <%= f.file_field :image %>
 
 
       <div class="object_meta">

@@ -6,6 +6,9 @@
     <%= form_for [:admin, @page] do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
+      <%= f.label :image %><br />
+      <%= f.file_field :image %>
+
       <%= f.label 		 :title %>
       <p><%= @page.chapter_id %>-<%= @page.position_in_chapter %></p>
 

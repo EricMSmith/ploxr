@@ -13,7 +13,6 @@ class Admin::PagesController < Admin::BaseController
 	def create
 		@page = Page.new(page_params)
 		@page.title = "#{@page.chapter_id}-#{@page.position_in_chapter}"
-		@page.filename = "placeholder.jpg"
 		if @page.save
 			flash[:success] = "Page created!"
 			redirect_to admin_path
@@ -47,6 +46,6 @@ class Admin::PagesController < Admin::BaseController
 	private
 
 		def page_params
-	    params.require(:page).permit(:title, :description, :filename, :position_in_chapter, :chapter_id)
+	    params.require(:page).permit(:title, :description, :image, :position_in_chapter, :chapter_id)
 	  end
 end

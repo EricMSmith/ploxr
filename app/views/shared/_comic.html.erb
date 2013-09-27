@@ -36,5 +36,6 @@
 	</nav>
 </div>
 <div class="comic-image">
-	<%= s3_comic_tag(@page.filename, alt: @page.description) %>
+	<%#= s3_comic_tag(@page.filename, alt: @page.description) %>
+	<%= image_tag @page.image.url %>
 </div>

@@ -29,8 +29,6 @@
         <%= f.label			 :position_in_chapter %>
         <%= f.select     :position_in_chapter, (1..@page_count.to_i) %>
 
-        <%# filename to come %>
-
         <div class="buttons">
         <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
         <%= link_to "Cancel", admin_path, class: "cancel" %>

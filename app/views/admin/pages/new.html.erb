@@ -31,9 +31,9 @@
 
         <%= f.hidden_field(:chapter_id, value: @page.chapter_id) %>
 
-        <%= f.label			 :position_in_chapter %>
-        <p><%= @page.position_in_chapter %></p>
-        <%= f.hidden_field(:position_in_chapter, value: @page.position_in_chapter) %>
+        <%= f.label			 :position %>
+        <p><em>New pages are automatically last in the chapter.</em></p>
+        <%= f.hidden_field(:position, value: @page.position) %>
 
         <div class="buttons">
         <%= f.submit "Add Page", class: "btn btn-large btn-primary" %>

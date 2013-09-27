@@ -1,4 +1,3 @@
 <% provide(:title, 'Chapter ' + (@page.chapter_id).to_s + ', Page ' +
-   (@page.position_in_chapter).to_s) %>
-<%#= content_tag(:a, '', :name => 'comic') %>
+   (@page.position).to_s) %>
 <%= render 'shared/comic' %>

@@ -1,8 +1,9 @@
 class PagesController < ApplicationController
 
 	def show
-		@chapters = Chapter.all
+		@chapters = Book.last.chapters.order("position ASC")
 		@page = Page.find(params[:id])
+		@chapter = Chapter.find_by(id: @page.chapter_id)
 	end
 
 	def index

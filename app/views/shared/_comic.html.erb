@@ -5,9 +5,9 @@
 			<% @chapters.each do |chapter| %>
 				<li>
 					<% if chapter.id == @page.chapter_id %>
-						<%= link_to chapter.id,	chapter, class: "active" %>
+						<%= link_to chapter.position,	chapter, class: "active" %>
 					<% else %>
-						<%= link_to chapter.id,	chapter %>
+						<%= link_to chapter.position,	chapter %>
 					<% end %>
 				</li>
 			<% end %>
@@ -16,26 +16,45 @@
 	<nav>
 		<ul class="nav pull-right page-nav">
 			<li>
-				<% if @page.previous.presence %>
+
+				<% if !@page.first? %>
 					<%= link_to image_tag("prev.png", alt: "previous"), 
-					    page_path(@page.previous), id: 'previous' %>
+					    page_path(@page.higher_item.id), id: 'previous' %>
 				<% else %>
-					<%= image_tag("prev.png", alt: "First page", title: "You're on the first page.", id: 'previous', class: "inactive") %>
+					<% if !@chapter.first? %>
+						<% prev_chapter = @chapter.higher_item %>
+						<%= link_to image_tag("prev.png",	alt: "previous"), 
+					    					page_path(prev_chapter.pages.last.id), id: 'previous' %>
+					<% else %>
+						<%= image_tag("prev.png", alt: "First page", 
+																		title: "You're on the first page.", 
+																		   id: 'previous', class: "inactive") %>
+					<% end %>
 				<% end %>
+
 			</li>
 			<li>
-				<% if @page.next.presence %>
+
+				<% if !@page.last? %>
 					<%= link_to image_tag("next.png",	alt: "next"), 
-					    page_path(@page.next), id: 'next' %>
+					    				page_path(@page.lower_item.id), id: 'next' %>
 				<% else %>
-					<%= image_tag("next.png", alt: "Last page", title: "You're on the last page.", id: 'next', class: "inactive") %>
+					<% if !@chapter.last? %>
+						<% next_chapter = @chapter.lower_item %>
+						<%= link_to image_tag("next.png",	alt: "next"), 
+					    					page_path(next_chapter.pages.first.id), id: 'next' %>
+					<% else %>
+						<%= image_tag("next.png", alt: "Last page", 
+																	  title: "You're on the last page.", 
+																	     id: 'next', class: "inactive") %>
+					<% end %>
 				<% end %>
+
 			</li>
 
 		</ul>
 	</nav>
 </div>
 <div class="comic-image">
-	<%#= s3_comic_tag(@page.filename, alt: @page.description) %>
 	<%= image_tag @page.image.url %>
 </div>

@@ -1,7 +1,7 @@
 <% provide(:title, 'Edit Page') %>
 
 <div class="book">
-<h1>Edit Page <%= @page.position_in_chapter %> of Chapter <%= @page.chapter.id %></h1>
+<h1>Edit Page <%= @page.position %> of Chapter <%= @chapter.position %></h1>
     <%= form_for [:admin, @page] do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
@@ -28,13 +28,8 @@
         <%= f.label 		 :description %>
         <%= f.text_area  :description %>
 
-        <%= f.label			 :chapter_id %>
-        <%= f.collection_select :chapter_id, Chapter.all, 
-        												:id, :full_chapter_title	   %>
-
-        <%# position isn't working %>
-        <%= f.label			 :position_in_chapter %>
-        <%= f.select     :position_in_chapter, (1..@page_count.to_i) %>
+        <%= f.label			 :position %>
+        <%= f.select     :position, (1..@chapter.pages.size) %>
 
         <div class="buttons">
         <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
@@ -49,7 +44,7 @@
                   admin_page_path(@page.id),
                   method: :delete,
                   data: { confirm: "Hey man, you sure?" },
-                  title: "#{@page.title}: #{@page.description}",
+                  title: "Delete Page #{@page.position}?",
                   class: "btn btn-big btn-delete pull-right" %>
     </div>
   </div>

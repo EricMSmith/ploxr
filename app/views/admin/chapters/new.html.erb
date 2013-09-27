@@ -12,6 +12,10 @@
       <%= f.label 		 :description %>
       <%= f.text_area  :description %>
 
+      <%= f.label      :position %>
+      <p><em>New chapters are automatically last in the book.</em></p>
+      <%= f.hidden_field(:position, value: @chapter.position) %>
+
       <div class="buttons">
       <%= f.submit "Create Chapter", class: "btn btn-large btn-primary" %>
       <%= link_to "Cancel", admin_path %>

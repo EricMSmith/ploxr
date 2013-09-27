@@ -36,30 +36,30 @@
 
 				<%= link_to "<i class='icon-wrench icon-white'></i>".html_safe, 
 										edit_admin_chapter_path(chapter.id),
-										title: "Edit Chapter #{chapter.id}. #{chapter.title}", 
+										title: "Edit Chapter #{chapter.position}. #{chapter.title}", 
 										class: "btn btn-mini pull-right edit-chapter" %>
 
 				<a class="accordion-toggle" data-toggle="collapse" 
 				   data-parent="#accordion2" href="#collapse<%= chapter.id %>">
-					 Chapter <%= chapter.id %>. <%= chapter.title %>
+					 Chapter <%= chapter.position %>. <%= chapter.title %>
 				</a> 
 
 	 		</div><!-- /accordion-heading -->
 
-	 		<% if chapter == @book.chapters.last %>
-
-	 		<div id="collapse<%= chapter.id %>" class="accordion-body collapse in">
+	 		<% if chapter.last? %>
+	 			<div id="collapse<%= chapter.id %>" class="accordion-body collapse in">
 	 		<% else %>
-			<div id="collapse<%= chapter.id %>" class="accordion-body collapse">
+				<div id="collapse<%= chapter.id %>" class="accordion-body collapse">
 	 		<% end %>
 
 	 			<div class="accordion-inner">
 					<ul class="inline comic-pages">
-							<% chapter.pages.order("position_in_chapter ASC").each do |page| %>
+							<% chapter.pages.each do |page| %>
 								<li>
 									<%= link_to image_tag(page.image.url(:thumb), 
                       				class: "img-rounded"),
-                      				edit_admin_page_path(page.id) %>
+                      				edit_admin_page_path(page.id),
+                      				title: "Edit Page #{page.position}" %>
                 </li>
 							<% end %>
 

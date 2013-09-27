@@ -5,6 +5,7 @@ class Admin::ChaptersController < Admin::BaseController
 
 	def new
 		@chapter = Chapter.new
+		@chapter.position = Book.last.chapters.size + 1
 	end
 
 	def create
@@ -42,6 +43,6 @@ class Admin::ChaptersController < Admin::BaseController
 	private
 
 		def chapter_params
-			params.require(:chapter).permit(:title, :description)
+			params.require(:chapter).permit(:title, :description, :position)
 		end
 end

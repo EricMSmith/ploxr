@@ -1,5 +1,5 @@
 class Book < ActiveRecord::Base
-	has_many  :chapters, order: :position
+	has_many  :chapters, -> { order(:position) }
 	validates :title, 				presence: true
 	validates :description, 	presence: true
 	validates :blurb,					presence: true

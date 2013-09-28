@@ -36,12 +36,12 @@
 
 				<%= link_to "<i class='icon-wrench icon-white'></i>".html_safe, 
 										edit_admin_chapter_path(chapter.id),
-										title: "Edit Chapter #{chapter.position}. #{chapter.title}", 
+										title: "Edit Chapter #{chapter.title}", 
 										class: "btn btn-mini pull-right edit-chapter" %>
 
 				<a class="accordion-toggle" data-toggle="collapse" 
 				   data-parent="#accordion2" href="#collapse<%= chapter.id %>">
-					 Chapter <%= chapter.position %>. <%= chapter.title %>
+					 Chapter <%= chapter.position %>: <%= chapter.title %>
 				</a> 
 
 	 		</div><!-- /accordion-heading -->

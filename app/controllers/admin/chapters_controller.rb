@@ -11,6 +11,7 @@ class Admin::ChaptersController < Admin::BaseController
 	def create
 		@chapter = Chapter.new(chapter_params)
 		@chapter.book_id = 1
+		@chapter.title = "#{chapter_params[:name]}"
 		if @chapter.save
 			flash[:success] = "Chapter created!"
 			redirect_to admin_path
@@ -25,6 +26,7 @@ class Admin::ChaptersController < Admin::BaseController
 
 	def update
 		@chapter = Chapter.find(params[:id])
+		@chapter.title = "#{chapter_params[:name]}"
 		if @chapter.update_attributes(chapter_params)
 			flash[:success] = "Chapter updated"
 			redirect_to admin_path
@@ -43,6 +45,6 @@ class Admin::ChaptersController < Admin::BaseController
 	private
 
 		def chapter_params
-			params.require(:chapter).permit(:title, :description, :position)
+			params.require(:chapter).permit(:title, :description, :position, :name)
 		end
 end

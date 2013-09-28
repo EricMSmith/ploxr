@@ -1,8 +1,8 @@
-<% provide(:title, 'Edit Page') %>
+<% provide(:title, "Edit Page #{@page.position} of Chapter #{@chapter.position}") %>
 
 <div class="book">
 <h1>Edit Page <%= @page.position %> of Chapter <%= @chapter.position %></h1>
-    <%= form_for [:admin, @page] do |f| %>
+    <%= form_for [:admin, @page], url: admin_page_path(@page.id) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
       <div class="row image_area">
@@ -25,10 +25,14 @@
 
       <div class="object_meta">
 
+        <%= f.label      :title %>
+        <%= f.text_field :title %>
+        <p class="muted"><small>Short and sweet.</small><p>
+
         <%= f.label 		 :description %>
         <%= f.text_area  :description %>
 
-        <%= f.label			 :position %>
+        <%= f.label			 :position, "Position in chapter" %>
         <%= f.select     :position, (1..@chapter.pages.size) %>
 
         <div class="buttons">

@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
 	def show
 		@chapters = Book.last.chapters.order("position ASC")
-		@page = Page.find(params[:id])
+		@page = Page.find_by_url(params[:id])
 		@chapter = Chapter.find_by(id: @page.chapter_id)
 	end
 
@@ -12,7 +12,13 @@ class PagesController < ApplicationController
 
 	def feed
 		@title = "PLOX : By Steve Hamaker"
-		@pages = Page.order("updated_at desc")
+		@chapters = Chapter.order("position DESC")
+
+		@pages = Array.new
+		@chapters.each do |chapter|
+			@pages += chapter.pages.order("position DESC")
+		end
+		
 		@updated = @pages.first.updated_at unless @pages.empty?
 		respond_to do |format|
 			format.atom { render :layout => false }

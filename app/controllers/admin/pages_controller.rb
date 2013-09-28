@@ -9,8 +9,6 @@ class Admin::PagesController < Admin::BaseController
 
 	def create
 		@page = Page.new(page_params)
-		chapter = Chapter.find(@page.chapter_id)
-		@page.title = "#{chapter.position}-#{@page.position}"
 		if @page.save
 			flash[:success] = "Page created!"
 			redirect_to admin_path

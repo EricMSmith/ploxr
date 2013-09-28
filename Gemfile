@@ -8,6 +8,7 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'paperclip', '~> 3.0'
 gem 'aws-sdk', '~> 1.0'
 gem 'acts_as_list', '0.3.0'
+gem 'stringex', '2.1.0'
 
 
 group :development, :test do

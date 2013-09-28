@@ -291,20 +291,140 @@ footer {
 
 /* ============ ADMIN =============== */
 
+/* forms */
+
+label {
+  color: $purplePink;
+}
+
+#error_explanation {
+  color: $purplePink;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+  input, textarea {
+    color: $purpleMedium;
+    &:focus {
+      border-color: #953b39;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $purpleLight;
+      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $purpleLight;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $purpleLight; 
+    }
+  }
+}
+
+.alert-success {
+  background-color: $greyMediumLight;
+  border-color: $purpleLight;
+  color: $purpleMedium;
+  text-shadow: none;
+  opacity: 0.75;
+}
+
+.alert-error {
+  background-color: $purplePink;
+  border-color: $purpleLight;
+  color: $purpleDark;
+  text-shadow: none;
+  opacity: 0.75;
+}
+
+.admin { 
+  input, textarea, .uneditable-input {
+    width: 600px; 
+  }
+}
+
+.user { 
+  input, textarea, .uneditable-input, label {
+    width: 300px; 
+  }
+}
+
+input[type="file"] {
+  width: 200px;
+}
+
+.buttons {
+  margin-top:20px;
+}
+
+form {
+  .object_meta {
+    clear:both;
+  }
+  .image_area {
+    margin-top:30px;
+  }
+  .btn {
+    width: 200px;
+    margin-right:15px;
+  }
+}
+
+.delete_wrapper {
+  background-color: $purpleMedium;
+  margin-top:140px;
+  padding:20px;
+  padding-bottom:30px;
+  border-color: $purpleDark;
+  .btn-delete {
+    background-color: $purpleMedium;
+    margin:0;
+  }
+}
+
+.cancel {
+  display:inline-block;
+}
+
+textarea {
+  height:200px;
+}
+
+.btn {
+  background-color: $blueLight;
+  background-image: none;
+  text-shadow: none;
+  color: white;
+  &:hover {
+    background-color: lighten($blueLight, 20%);
+  }
+}
+
+.user {
+  background-color: $blueMedium;
+  padding: 2em 0 2em 4em;
+  margin: 3em 6em;
+  color: $blueLight;
+  h1 { 
+    color: $purpleLight;
+    margin-bottom: 1em;
+  }
+}
+
 .admin {
 
-  .btn {
-    background-color: $blueLight;
-    background-image: none;
-    text-shadow: none;
-    color: white;
-  }
-
   .navbar {
-    color: $greyMedium;
+    color: $greyMediumLight;
     .nav {
       li {
-          padding:4px;
+        padding:6px;
+        a {
+          padding:0;
+        }
+      }
+      li.greeting {
+        font-size: 18px;
+      }
+      li.signout {
+        padding-top:8px;
       }
     }
     .brand {
@@ -384,94 +504,7 @@ footer {
       }
     }
   }
-  /* forms */
-
-  label {
-    color: $purplePink;
-  }
-
-  #error_explanation {
-    color: $purplePink;
-    ul {
-      list-style: none;
-      margin: 0 0 18px 0;
-    }
-  }
-
-  .field_with_errors {
-    @extend .control-group;
-    @extend .error;
-    input, textarea {
-      color: $purpleMedium;
-      &:focus {
-        border-color: #953b39;
-        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $purpleLight;
-        -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $purpleLight;
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px $purpleLight; 
-      }
-    }
-  }
-
-  .alert-success {
-    background-color: $greyMediumLight;
-    border-color: $purpleLight;
-    color: $purpleMedium;
-    text-shadow: none;
-    opacity: 0.75;
-  }
-
-  .alert-error {
-    background-color: $purplePink;
-    border-color: $purpleLight;
-    color: $purpleDark;
-    text-shadow: none;
-    opacity: 0.75;
-  }
-
-  input, textarea, .uneditable-input {
-    width: 600px; 
-  }
-
-  input[type="file"] {
-    width: 200px;
-  }
-
-  .buttons {
-    margin-top:20px;
-  }
-
-  form {
-    .object_meta {
-      clear:both;
-    }
-    .image_area {
-      margin-top:30px;
-    }
-    .btn {
-      width: 200px;
-      margin-right:15px;
-    }
-  }
-
-  .delete_wrapper {
-    background-color: $purpleMedium;
-    margin-top:100px;
-    padding:20px;
-    padding-bottom:30px;
-    border-color: $purpleDark;
-    .btn-delete {
-      background-color: $purpleMedium;
-      margin:0;
-    }
-  }
-
-  .cancel {
-    display:inline-block;
-  }
-
-  textarea {
-    height:200px;
-  }
+  
 }
 
 /* ============ media rules =============== */

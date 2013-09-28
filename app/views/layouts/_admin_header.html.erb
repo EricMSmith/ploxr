@@ -4,17 +4,17 @@
 				<span class="brand">ADMIN</span>
 				<div class="nav-collapse collapse">
 					<ul class="nav">
-						<li><%= link_to "View site", root_path, target: '_blank',
-																				 class: 'steve-hamaker' %></li>
+						<li><%= link_to "View site", root_path, target: '_blank' %></li>
 					</ul>
 				</div>
 
 				<div class="nav-collapse collapse">
 					<nav>
 							<ul class="nav pull-right">
-								<li><img src="http://placehold.it/24x24/717174/000000" class="img-rounded"></li>
-								<li>Steve Hamaker</li>
-								<li><%= link_to "Sign Out", about_path %></li>
+									<% if signed_in? %>
+										<li class="greeting"><%= "Hi, #{current_user.first_name}!" %></li>
+										<li class="signout"><%= link_to "Sign out", signout_path, method: "delete" %></li>
+									<% end %>
 							</ul>
 					</nav>
 				</div>

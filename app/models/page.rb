@@ -1,6 +1,7 @@
 class Page < ActiveRecord::Base
 	belongs_to 	:chapter
 	acts_as_list scope: :chapter
+	acts_as_url :title, :sync_url => true
 	validates	  :position,						presence: true
 	validates		:title, 							presence: true
 	validates		:description, 				presence: true
@@ -11,4 +12,8 @@ class Page < ActiveRecord::Base
     square: '200x200#',
     medium: '300x300>'
   }
+
+  def to_param
+  	url
+	end
 end

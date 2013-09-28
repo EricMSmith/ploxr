@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130927145113) do
+ActiveRecord::Schema.define(version: 20130928155447) do
 
   create_table "admin_users", force: true do |t|
     t.string   "first_name"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20130927145113) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position"
+    t.string   "url"
+    t.string   "name"
   end
 
   create_table "pages", force: true do |t|
@@ -61,6 +63,7 @@ ActiveRecord::Schema.define(version: 20130927145113) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "position"
+    t.string   "url"
   end
 
   create_table "users", force: true do |t|

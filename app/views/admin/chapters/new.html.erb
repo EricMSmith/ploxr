@@ -1,19 +1,19 @@
-<% provide(:title, 'Add a Chapter') %>
+<% provide(:title, "Add Chapter #{@chapter.position}") %>
 
 <div class="book">
-<h1>Add a Chapter</h1>
+<h1>Add Chapter <%= @chapter.position %></h1>
+<p class="muted"><small>New chapters are automatically last in the book.</small><p>
 
     <%= form_for [:admin, @chapter] do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label 		 :title %>
-      <%= f.text_field :title %>
+      <%= f.label 		 :name %>
+      <%= f.text_field :name %>
+      <p class="muted"><small>Example: "The Storm", not "Chapter 4: The Storm".</small><p>
 
       <%= f.label 		 :description %>
       <%= f.text_area  :description %>
 
-      <%= f.label      :position %>
-      <p><em>New chapters are automatically last in the book.</em></p>
       <%= f.hidden_field(:position, value: @chapter.position) %>
 
       <div class="buttons">

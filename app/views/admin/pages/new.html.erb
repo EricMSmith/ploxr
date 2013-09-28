@@ -1,7 +1,7 @@
-<% provide(:title, 'Add a Page') %>
+<% provide(:title, "Add a Page to Chapter #{@chapter.position}") %>
 
 <div class="book">
-<h1>Add a Page to Chapter <%= @page.chapter_id %></h1>
+<h1>Add a Page to Chapter <%= @chapter.position %></h1>
 
     <%= form_for [:admin, @page] do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
@@ -26,13 +26,17 @@
 
       <div class="object_meta">
 
+        <%= f.label      :title %>
+        <%= f.text_field  :title %>
+        <p class="muted"><small>Short and sweet.</small><p>
+
         <%= f.label 		 :description %>
         <%= f.text_area  :description %>
 
         <%= f.hidden_field(:chapter_id, value: @page.chapter_id) %>
 
-        <%= f.label			 :position %>
-        <p><em>New pages are automatically last in the chapter.</em></p>
+        <%= f.label			 :position, "Position in chapter" %>
+        <p class="muted"><small>New pages are automatically last in the chapter.</small><p>
         <%= f.hidden_field(:position, value: @page.position) %>
 
         <div class="buttons">

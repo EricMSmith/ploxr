@@ -24,10 +24,15 @@
 		  	<div id="share">
 					<h3>Share PLOX</h3>
 					<% if Rails.env.production? %>
-						<span class='st_facebook_large' displayText='Facebook'></span>
-						<span class='st_twitter_large' displayText='Tweet'></span>
-						<span class='st_tumblr_large' displayText='Tumblr'></span>
-						<span class='st_googleplus_large' displayText='Google +'></span>  
+						<!-- AddThis Button BEGIN -->
+						<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+						<a class="addthis_button_facebook"></a>
+						<a class="addthis_button_twitter"></a>
+						<a class="addthis_button_google_plusone_share"></a>
+						<a class="addthis_button_tumblr"></a>
+						</div>
+						<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-524a061e7044931c"></script>
+						<!-- AddThis Button END --> 
 					<% end %>		
       	</div>
 			</div>

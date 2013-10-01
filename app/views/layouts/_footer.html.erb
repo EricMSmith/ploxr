@@ -23,17 +23,15 @@
 		  <div class="span3">
 		  	<div id="share">
 					<h3>Share PLOX</h3>
-					<% if Rails.env.production? %>
-						<!-- AddThis Button BEGIN -->
-						<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-						<a class="addthis_button_facebook"></a>
-						<a class="addthis_button_twitter"></a>
-						<a class="addthis_button_google_plusone_share"></a>
-						<a class="addthis_button_tumblr"></a>
-						</div>
-						<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-524a061e7044931c"></script>
-						<!-- AddThis Button END --> 
-					<% end %>		
+					<div class="navbar">
+						<ul class="nav">
+							<li>
+								<a href="https://twitter.com/share" class="twitter-share-button" data-text="PLOX: <%= @page.title %>" data-size="large" data-count="none">Tweet</a>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+							</li>
+							</li>
+						</ul>
+					</div>
       	</div>
 			</div>
 		</div><!-- /row -->

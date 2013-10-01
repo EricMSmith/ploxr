@@ -1,2 +1,2 @@
-<% provide(:title, 'Chapter ' + (@page.chapter_id).to_s) %>
+<% provide(:title, "Chapter #{ @chapter.position.to_s }: #{ @chapter.title }") %>
 <%= render 'shared/comic' %>

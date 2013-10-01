@@ -261,6 +261,29 @@ footer {
     line-height: 22px;
   }
 
+  ul.connect {
+    float: none;
+    li {
+      margin-bottom:1em;
+      a {
+        color: $greyMedium;
+        &:hover {
+          color: $greyMediumLight;
+          text-decoration: none;
+        }
+      }
+    }
+    .connect_twitter {
+      list-style: url(image_path('cTwitter.png'));
+    }
+    .connect_facebook {
+      list-style: url(image_path('cFacebook.png'));
+    }
+    .connect_rss {
+      list-style: url(image_path('cRSS.png'));
+    }
+  }
+
   div#blurb {
     padding-right:30px;
   }
@@ -274,6 +297,10 @@ footer {
     li {
       a {
         padding:0 6px;
+        text-shadow: none;
+        &:hover {
+          color: $purpleLight;
+        }
       }
     }
   }

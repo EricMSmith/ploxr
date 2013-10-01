@@ -11,28 +11,47 @@
 				<div id="connect">
 					<h3>Connect with Steve</h3>
 					<div class="navbar">
-				    <ul class="nav">
-				    	<li><%= link_to image_tag("twitter.png", alt: "Twitter"), 
-				    														'https://twitter.com/SteveHamaker' %></li>
-				    	<li><%= link_to image_tag("facebook.png", alt: "Facebook"),
-				    														'https://www.facebook.com/PloxComic' %></li>
+				    <ul class="connect">
+				    	<li class="connect_twitter">
+				    		<%= link_to "Follow Steve on Twitter", 
+				    		            "https://twitter.com/SteveHamaker",
+				    		            target: "_blank" %>
+				      </li>
+				    	<li class="connect_facebook">
+				    		<%= link_to "Like PLOX on Facebook", 
+				    		            "https://www.facebook.com/PloxComic",
+				    		            target: "_blank" %>
+				    	</li>
+				    	<li class="connect_rss">
+				    		<%= link_to "PLOX RSS/Atom Feed", feed_path,
+				    		            target: "_blank" %>
+				    	</li>
 				    </ul>
 			  	</div>
 				</div>
 		  </div>
 		  <div class="span3">
 		  	<div id="share">
-					<h3>Share PLOX</h3>
+					<h3>Share this PLOX comic</h3>
 					<div class="navbar">
 						<ul class="nav">
 							<li>
-								<%= link_to "Facebook", "http://www.facebook.com/sharer/sharer.php?u=#{ request.original_url }", target: "_blank", title: "Share this on Facebook" %>
+								<%= link_to image_tag("facebook.png", alt: "Facebook"), 
+								            "http://www.facebook.com/sharer/sharer.php?u=#{ request.original_url }",
+								            target: "_blank",
+								            title: "Share this on Facebook" %>
 							</li>
 							<li>
-								<%= link_to "Twitter", "http://twitter.com/intent/tweet?text=PLOX%20by%20@SteveHamaker%20#{ request.original_url }", target: "_blank", title: "Share this on Twitter" %>
+								<%= link_to image_tag("twitter.png", alt: "Twitter"), 
+								            "http://twitter.com/intent/tweet?text=PLOX%20by%20@SteveHamaker%20#{ request.original_url }", 
+								            target: "_blank",
+								            title: "Share this on Twitter" %>
 							</li>
 							<li>
-								<%= link_to "Google+", "https://plus.google.com/share?url=#{ request.original_url }", target: "_blank", title: "Share this on Google+" %>
+								<%= link_to "Google+", 
+								            "https://plus.google.com/share?url=#{ request.original_url }", 
+								            target: "_blank",
+								            title: "Share this on Google+" %>
 							</li>
 						</ul>
 					</div>

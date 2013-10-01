@@ -23,17 +23,17 @@
 		  <div class="span3">
 		  	<div id="share">
 					<h3>Share PLOX</h3>
-					<div class="navbar">
-						<ul class="nav">
-							<li>
-								<a href="https://twitter.com/share" class="twitter-share-button" data-text="PLOX: <%= @page.title %>" data-size="large" data-count="none">Tweet</a>
-								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-							</li>
-							<li>
-								<fb:like width="150" colorscheme="dark" layout="button_count" show_faces="false" send="true"></fb:like>
-							</li>
-						</ul>
-					</div>
+						<p>
+							<a href="https://twitter.com/share" class="twitter-share-button" data-text="PLOX: <%= @page.title %>" data-size="medium" data-count="none">Tweet</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+						</p>
+						<p>
+							<fb:like width="150" colorscheme="dark" layout="button_count" show_faces="false" send="true"></fb:like>
+						</p>
+						<p>
+							<script src="https://apis.google.com/js/plusone.js"></script>
+							<g:plus action="share"></g:plus>
+						</p>
       	</div>
 			</div>
 		</div><!-- /row -->

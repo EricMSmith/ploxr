@@ -25,6 +25,8 @@ group :test do
   gem 'capybara', '2.1.0'
   gem 'libnotify', '0.8.0'
   gem 'factory_girl_rails', '4.2.1'
+  gem 'faker', '1.2.0'
+  gem 'launchy', '2.3.0'
 end
 
 gem 'sass-rails', '4.0.0'

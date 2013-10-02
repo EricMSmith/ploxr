@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 
+	def full_name
+		[first_name, last_name].join " "
+	end
+
 	def User.new_remember_token
    SecureRandom.urlsafe_base64
   end

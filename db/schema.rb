@@ -13,18 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20130928155447) do
 
-  create_table "admin_users", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "remember_token"
-  end
-
-  add_index "admin_users", ["remember_token"], name: "index_admin_users_on_remember_token"
-
   create_table "books", force: true do |t|
     t.string   "title"
     t.text     "description"

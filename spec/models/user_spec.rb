@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe User do
   
-	before { @user = User.new(first_name: "Bob", last_name: "Marley",
-														email: "bob@marley.com", password: "foobar",
-														password_confirmation: "foobar" ) }
+	before do
+	  @user = FactoryGirl.build(:user)
+	end
 
 	subject { @user }
 
@@ -123,7 +123,7 @@ describe User do
 	end
 
 	describe "remember token" do
-   before { @user.save }
-   its(:remember_token) { should_not be_blank }
+   		before { @user.save }
+   	its(:remember_token) { should_not be_blank }
   end
 end

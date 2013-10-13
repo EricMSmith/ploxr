@@ -19,7 +19,7 @@
 
 	  <!-- Javascripts -->
 	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-	  <%= render 'layouts/track_outbound_links' %>
+	  <%= render 'layouts/track_outbound_links' if RAILS_ENV == 'production' %>
 
 	  <!-- Fav and touch icons -->
 	  <%= favicon_link_tag 'favicon.ico' %>
@@ -44,6 +44,6 @@
 		</section>
 
 		<%= render 'layouts/footer' %>
-		<%= render 'layouts/googleanalytics' %>
+		<%= render 'layouts/googleanalytics' if RAILS_ENV == 'production' %>
 	</body>
 </html>

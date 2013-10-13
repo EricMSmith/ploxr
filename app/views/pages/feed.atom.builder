@@ -17,7 +17,11 @@ atom_feed :language => 'en-US' do |feed|
 		                     simple_format("\n") +
 
 												 link_to(page.description, page_url(page)),
-												 type: "html")																 
+												 type: "html")
+
+					entry.author do |author|
+		        author.name("Steve Hamaker")
+		      end																 
 			end
 		else
 

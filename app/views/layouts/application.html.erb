@@ -19,13 +19,12 @@
 
 	  <!-- Javascripts -->
 	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	  <%= render 'layouts/track_outbound_links' %>
 
 	  <!-- Fav and touch icons -->
 	  <%= favicon_link_tag 'favicon.ico' %>
 	  <%= favicon_link_tag 'favicon.ico', rel: 'apple-touch-icon', type: 'image/png' %>
 
-	  <% # Add Google Analytics at launch %>
-	  <% # ID: UA-42540201-1 %>
 	</head>
 	<body>
 
@@ -45,6 +44,6 @@
 		</section>
 
 		<%= render 'layouts/footer' %>
-
+		<%= render 'layouts/googleanalytics' %>
 	</body>
 </html>

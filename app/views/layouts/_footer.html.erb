@@ -15,12 +15,16 @@
 				    	<li class="connect_twitter">
 				    		<%= link_to "Steve on Twitter", 
 				    		            "https://twitter.com/SteveHamaker",
-				    		            target: "_blank" %>
+				    		            target: "_blank",
+				    		            title:  "Steve on Twitter",
+				    		            class: 	"outbound_link" %>
 				      </li>
 				    	<li class="connect_facebook">
 				    		<%= link_to "PLOX on Facebook", 
 				    		            "https://www.facebook.com/PloxComic",
-				    		            target: "_blank" %>
+				    		            target: "_blank",
+				    		            title:  "PLOX on Facebook",
+				    		            class: 	"outbound_link" %>
 				    	</li>
 				    	<li class="connect_rss">
 				    		<%= link_to "PLOX RSS/Atom Feed", feed_path,
@@ -34,24 +38,27 @@
 		  	<div id="share">
 					<h3>Share this PLOX comic</h3>
 					<div class="navbar">
-						<ul class="nav">
+						<ul class="nav share">
 							<li>
 								<%= link_to image_tag("facebook.png", alt: "Facebook"), 
 								            "http://www.facebook.com/sharer/sharer.php?u=#{ request.original_url }",
 								            target: "_blank",
-								            title: "Share this on Facebook" %>
+								            title:  "Share on Facebook",
+								            class: 	"outbound_link" %>
 							</li>
 							<li>
 								<%= link_to image_tag("twitter.png", alt: "Twitter"), 
 								            "http://twitter.com/intent/tweet?text=PLOX%20by%20@SteveHamaker%20#{ request.original_url }", 
 								            target: "_blank",
-								            title: "Share this on Twitter" %>
+								            title:  "Share on Twitter",
+								            class:  "outbound_link" %>
 							</li>
 							<li>
 								<%= link_to image_tag("googleplus.png", alt: "Google+"), 
 								            "https://plus.google.com/share?url=#{ request.original_url }", 
 								            target: "_blank",
-								            title: "Share this on Google+" %>
+								            title:  "Share on Google+",
+								            class: 	"outbound_link" %>
 							</li>
 						</ul>
 					</div>

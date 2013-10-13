@@ -20,6 +20,7 @@ class PagesController < ApplicationController
 		end
 		
 		@updated = @pages.first.updated_at unless @pages.empty?
+		
 		respond_to do |format|
 			format.atom { render :layout => false }
 			format.rss { redirect_to feed_path(:format => :atom),

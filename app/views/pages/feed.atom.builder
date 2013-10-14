@@ -7,7 +7,7 @@ atom_feed :language => 'en-US' do |feed|
 			feed.entry( page ) do |entry|
 					entry.title   "NEW! Chapter #{ Chapter.find(page.chapter_id).position }, 
 					               Page #{ page.position }: #{ page.title }"
-					entry.content( image_tag("new_update_banner.jpg") +
+					entry.content( image_tag("https://s3.amazonaws.com/ploxrproduction/new_update_banner.jpg") +
 
 												 simple_format("\n") +
 

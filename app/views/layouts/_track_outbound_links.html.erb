@@ -1,23 +1,6 @@
 <script type="text/javascript">
-	function trackOutboundLink(link, category, action) {
-	 
-		try {
-		_gaq.push(['_trackEvent', category , action]);
-		} catch(err){}
-		 
-		setTimeout(function() {
-		document.location.href = link;
-		}, 100);
-	}
-
-  $(function () {
-    $('.outbound_link').click(function () {
-      click_action = this.getAttribute('title');
-      click_link = this.getAttribute('href');
-      click_category = 'Outbound Links';
-      console.log(click_action + " " + click_link + " " + click_category);
-      trackOutboundLink(click_link, click_category, click_action);
-      return false;
-    })
-  });
+// Using jQuery Event API v1.3
+$('.outbound_link').on('click', function() {
+  ga('send', 'event', 'link', 'click', 'Outbound Links', this.getAttribute('title'));
+});
 </script>

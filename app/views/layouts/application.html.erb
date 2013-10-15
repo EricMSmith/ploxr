@@ -19,7 +19,6 @@
 
 	  <!-- Javascripts -->
 	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-	  <%= render 'layouts/track_outbound_links' if Rails.env.production? %>
 
 	  <!-- Fav and touch icons -->
 	  <%= favicon_link_tag 'favicon.ico' %>
@@ -45,5 +44,6 @@
 
 		<%= render 'layouts/footer' %>
 		<%= render 'layouts/google_analytics' if Rails.env.production? %>
+		<%= render 'layouts/track_outbound_links' if Rails.env.production? %>
 	</body>
 </html>

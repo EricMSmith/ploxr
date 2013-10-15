@@ -1,6 +1,6 @@
 <script type="text/javascript">
 // Using jQuery Event API v1.3
 $('.outbound_link').on('click', function() {
-  ga('send', 'event', 'Outbound Link', 'click', {'link': this.getAttribute('href')});
+  ga('send', 'event', 'Outbound Link', 'click', this.getAttribute('title'));
 });
 </script>

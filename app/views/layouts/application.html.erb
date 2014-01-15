@@ -18,7 +18,7 @@
 	  <%= render 'layouts/shim' %>
 
 	  <!-- Javascripts -->
-	  <%= render 'layouts/dfp_ads_js' %>	
+	  <%= render 'layouts/dfp_ads_js' if Rails.env.production? %>	
 	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	  
 
@@ -43,7 +43,7 @@
 						</div>
 			</div><!-- /container -->
 		</section>
-		<%= render 'layouts/bottom_ads' %>
+		<%= render 'layouts/bottom_ads' if Rails.env.production? %>
 		<%= render 'layouts/footer' %>
 		<%= render 'layouts/google_analytics' if Rails.env.production? %>
 		<%= render 'layouts/track_outbound_links' if Rails.env.production? %>

@@ -31,7 +31,7 @@
 
 			</div>
 	</div>
-	<%= render 'layouts/top_ad' %>
+	<%= render 'layouts/top_ad' if Rails.env.production? %>
 	<div class="container">
 		<%= link_to(root_path) do %>
 			<div class="masthead"></div>

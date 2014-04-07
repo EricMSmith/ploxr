@@ -17,14 +17,13 @@
 								<li><%= link_to "Subscribe", 
 																"http://feeds.feedburner.com/plox-comic", 
 																target: "_blank" %></li>
-								<!-- <li><%#= link_to "Message Board", 
-																'http://plox.boardhost.com/index.php',
-																title:  "PLOX Message Board",
-				    		            		class: 	"outbound_link" %></li>-->
-								<!--<li><%#= link_to "Shop", 
-																'http://steves-store-3.myshopify.com/',
-																title:  "Steve's Shop",
-				    		            		class: 	"outbound_link" %></li>-->
+								<li><%= link_to "Support Plox:", 
+																'http://www.patreon.com/plox',
+																title:  "Support Plox at Patreon.com",
+				    		            		class: 	"outbound_link", style: "display:inline;padding-right:7px;" %><%= link_to image_tag("patreon-logo.png", alt: "Patreon", width: "80px"), 
+																'http://www.patreon.com/plox',
+																title:  "Support Plox at Patreon.com",
+				    		            		class: 	"outbound_link", style: "display:inline;padding:0;" %></li>
 							</ul>
 					</nav>
 				</div>
